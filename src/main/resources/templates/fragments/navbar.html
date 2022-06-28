@@ -12,27 +12,30 @@
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a href="index.html" class="nav-link text-white">
+        <a th:href="@{/congviec}" class="nav-link text-white">
           <span><i class="fa-solid fa-briefcase"></i>&nbsp;&nbsp;
             CÔNG VIỆC</span>
         </a>
       </li>
       <li>
-        <a href="nv.html" class="nav-link text-white">
+      <!-- href="nv.html"  -->
+        <a th:href="@{/nhanvien}" class="nav-link text-white">
           <span>
             <i class="fa-solid fa-id-card"></i>&nbsp;&nbsp;
             NHÂN VIÊN
           </span>
         </a>
       </li>
+      <!-- tk.html -->
       <li class="nav-item">
-        <a href="tk.html" class="nav-link text-white">
+        <a href="/" class="nav-link text-white">
           <span><i class="fa-solid fa-user-large"></i>&nbsp;&nbsp;
           TÀI KHOẢN
           </span>
         </a>
       </li>
-        <a href="calam.html" class="nav-link text-white">
+      <!-- href="calam.html" -->
+        <a  th:href="@{/calam}" class="nav-link text-white">
           <span>
             <i class="fa-solid fa-calendar"></i>&nbsp;&nbsp;
             CA LÀM
@@ -40,7 +43,8 @@
         </a>
       </li>
       <li>
-        <a href="#" class="nav-link active" aria-current="page">
+      <!-- href="#"  -->
+        <a th:href="@{/tkluong}" class="nav-link active" aria-current="page">
           <span>
             <i class="fa-solid fa-chart-simple"></i>&nbsp;&nbsp;
             THỐNG KÊ LƯƠNG

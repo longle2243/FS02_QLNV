@@ -10,10 +10,6 @@
 	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
 </head>
 <body>
-	<!-- 
-	
-	 <div th:replace="~{fragments/header :: header}"></div>
-	 -->
 	<div th:replace="~{fragments/header :: header}"></div>
 	<div class="container">
 		<br>
@@ -40,7 +36,7 @@
 						<tr th:each="nhanvien:${listnhanvien}">
 							<td th:text="${nhanvien.manhanvien}" />
 							<td th:text="${nhanvien.hoten}" />
-							<td>Fresher</td>
+							<td th:text="${nhanvien.chucvu.chucvu}" />
 							<td>Cần Thơ</td>
 							<td th:text="${nhanvien.sdt}" />
 							<td th:text="${nhanvien.email}" />

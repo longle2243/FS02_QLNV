@@ -11,6 +11,7 @@
 	crossorigin="anonymous">
 </head>
 <body style="background-color: lightgoldenrodyellow;">
+	<div th:replace="~{fragments/header :: header}"></div>
 	<div class="container border"
 		style="width: 500px; height: 400px; margin-top: 150px; background-color: white;">
 		<h1 class="text-center" style="padding-top: 10px">THÊM CÔNG VIỆC</h1>
@@ -23,15 +24,24 @@
 			</div>
 
 			<div class="mb-3">
-				<label>NGƯỜI GIAO:</label> <input type="text" class="form-control"
-					th:field="*{nguoigiaoviec}" required>
+				<label>NGƯỜI GIAO:</label>
+				<!-- 	<input type="text" class="form-control" th:field="*{nguoigiaoviec}" required>  -->
+				<select class="form-control" th:field="*{nguoigiaoviec}">
+					<option value="0">Chọn người giao</option>
+					<option th:each="nhanvien : ${listnhanvien}"
+						th:value="${nhanvien.hoten}" th:text="${nhanvien.hoten}"></option>
+				</select>
 			</div>
-			
+
 			<div class="mb-3">
-				<label>NGƯỜI THỰC HIỆN:</label> <input type="text" class="form-control"
-					th:field="*{nguoithuchien}" required>
+				<label>NGƯỜI THỰC HIỆN:</label>
+				<select class="form-control" th:field="*{nguoithuchien}">
+					<option value="0">Chọn người thực hiện</option>
+					<option th:each="nhanvien : ${listnhanvien}"
+						th:value="${nhanvien.hoten}" th:text="${nhanvien.hoten}"></option>
+				</select>
 			</div>
-			
+
 			<div class="mb-3">
 				<label>NỘI DUNG:</label> <input type="text" class="form-control"
 					th:field="*{noidung}" required>

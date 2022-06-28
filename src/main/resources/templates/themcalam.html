@@ -11,15 +11,23 @@
 	crossorigin="anonymous">
 </head>
 <body style="background-color: lightgoldenrodyellow;">
+	<div th:replace="~{fragments/header :: header}"></div>
 	<div class="container border"
 		style="width: 500px; height: 400px; margin-top: 150px; background-color: white;">
 		<h1 class="text-center" style="padding-top: 10px">THÊM CA LÀM</h1>
 		<form action="#" th:action="@{/savecalam}" th:object="${calam}"
 			method="post">
-
 			<div class="mb-3">
-				<label>BUỔI:</label> <input type="text" class="form-control"
-					th:field="*{buoi}" required>
+				<label>BUỔI:</label> 
+		<!-- <input type="text" class="form-control" th:field="*{buoi}" required> -->								
+				<select class="form-control" th:field="*{buoi}">
+					<option value="Không có">Chọn Buổi</option>
+					<option value="Sáng">Buổi Sáng</option>
+					<option value="Trưa">Buổi Trưa</option>
+					<option value="Chiều">Buổi Chiều</option>
+					<option value="Tối">Buổi Tối</option>
+					<option value="Tối">Buổi Khuya</option>
+				</select>
 			</div>
 
 			<div class="mb-3">

@@ -11,17 +11,26 @@
 	crossorigin="anonymous">
 </head>
 <body style="background-color: lightgoldenrodyellow;">
+	<div th:replace="~{fragments/header :: header}"></div>
 	<div class="container border"
 		style="width: 500px; height: 400px; margin-top: 150px; background-color: white;">
-		<h1 class="text-center" style="padding-top: 10px">THÊM NHÂN
-			VIÊN</h1>
+		<h1 class="text-center" style="padding-top: 10px">THÊM NHÂN VIÊN</h1>
 		<form action="#" th:action="@{/save}" th:object="${nhanvien}"
 			method="post">
-				<!-- readonly="readonly" -->
+			<!-- readonly="readonly" -->
 			<div class="mb-3 mt-3">
-				<label>HỌ & TÊN:</label> <input type="text"
-					class="form-control" id="uname"
-					name="uname" th:field="*{hoten}" required>
+				<label>HỌ & TÊN:</label> <input type="text" class="form-control"
+					id="uname" name="uname" th:field="*{hoten}" required>
+			</div>
+
+			<div class="mb-3">
+				<label>CHỨC VỤ:</label>
+				<!-- <input type="text" class="form-control" th:field="*{chucvu}" required>   -->
+				<select class="form-control" th:field="*{chucvu}">
+					<option value="0">Chọn chức vụ</option>
+					<option th:each="chucvu : ${listchucvu}"
+						th:value="${chucvu.machucvu}" th:text="${chucvu.chucvu}"></option>
+				</select>
 			</div>
 
 			<div class="mb-3">

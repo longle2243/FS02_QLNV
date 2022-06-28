@@ -32,72 +32,8 @@
 			<h1 class="text-center">THỐNG KÊ LƯƠNG</h1>
 			<br>
 			<br>
-			<br>
-			<div class="btn-group">
-				<button type="button" class="btn btn-outline-primary" id="btn-d">Ngày</button>
-				<button type="button" class="btn btn-outline-primary" id="btn-w">Tuần</button>
-				<button type="button" class="btn btn-outline-primary" id="btn-m">Tháng</button>
-				<button type="button" class="btn btn-outline-primary" id="btn-y">Năm</button>
-			</div>
-			<br>
-			<br>
-			<div id="dd" class="hidden">
-				<table class="table table-bordered text-center">
-					<thead class="table-primary">
-						<tr>
-							<th>STT</th>
-							<th>HỌ VÀ TÊN</th>
-							<th>TỔNG SỐ CA LÀM</th>
-							<th>TIỀN LƯƠNG</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>1</td>
-							<td>Nguyễn Văn B</td>
-							<td>2</td>
-							<td>96000</td>
-						</tr>
-						<tr>
-							<td colspan="3">Tổng tiền</td>
-							<td>96000</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-
-			<div id="dw" class="hidden">
-				<table class="table table-bordered text-center">
-					<thead class="table-primary">
-						<tr>
-							<th>STT</th>
-							<th>HỌ VÀ TÊN</th>
-							<th>TỔNG SỐ CA LÀM</th>
-							<th>TIỀN LƯƠNG</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>1</td>
-							<td>Nguyễn Văn B</td>
-							<td>2</td>
-							<td>96000</td>
-						</tr>
-						<tr>
-							<td>2</td>
-							<td>Nguyễn Văn B</td>
-							<td>2</td>
-							<td>96000</td>
-						</tr>
-						<tr>
-							<td colspan="3">Tổng tiền</td>
-							<td>96000</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-
-			<div id="dm" class="hidden">
+			<br>		
+			<div id="dm" >
 				<table class="table table-bordered text-center">
 					<thead class="table-primary">
 						<tr>
@@ -134,73 +70,10 @@
 				</table>
 			</div>
 
-			<div id="dy" class="hidden">
-				<table class="table table-bordered text-center">
-					<thead class="table-primary">
-						<tr>
-							<th>STT</th>
-							<th>HỌ VÀ TÊN</th>
-							<th>TỔNG SỐ CA LÀM</th>
-							<th>TIỀN LƯƠNG</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>1</td>
-							<td>Nguyễn Văn B</td>
-							<td>2</td>
-							<td>96000</td>
-						</tr>
-						<tr>
-							<td>2</td>
-							<td>Nguyễn Văn B</td>
-							<td>2</td>
-							<td>96000</td>
-						</tr>
-						<tr>
-							<td>3</td>
-							<td>Nguyễn Văn B</td>
-							<td>2</td>
-							<td>96000</td>
-						</tr>
-						<tr>
-							<td colspan="3">Tổng tiền</td>
-							<td>96000</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
 		</div>
 
 	</main>
 
-	<script language="JavaScript">
-    document.getElementById("btn-d").onclick = function () {
-       document.getElementById("dd").style.display = 'block';
-       document.getElementById("dw").style.display = 'none';
-       document.getElementById("dm").style.display='none';
-       document.getElementById("dy").style.display='none';
-    };
-
-    document.getElementById("btn-w").onclick = function () {
-        document.getElementById("dd").style.display = 'none';
-        document.getElementById("dw").style.display = 'block';
-        document.getElementById("dm").style.display='none';
-        document.getElementById("dy").style.display='none';
-    };
-    document.getElementById("btn-m").onclick = function () {
-        document.getElementById("dd").style.display = 'none';
-        document.getElementById("dw").style.display = 'none';
-        document.getElementById("dm").style.display='block';
-        document.getElementById("dy").style.display='none';
-    };
-    document.getElementById("btn-m").onclick = function () {
-        document.getElementById("dd").style.display = 'none';
-        document.getElementById("dw").style.display = 'none';
-        document.getElementById("dm").style.display='none';
-        document.getElementById("dy").style.display='block';
-    };
-</script>
 	<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
 
 	<script th:src="@{/js/sidebars.js}"></script>

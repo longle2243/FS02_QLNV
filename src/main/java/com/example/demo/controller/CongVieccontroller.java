@@ -12,12 +12,16 @@ package com.example.demo.controller;
 	import org.springframework.web.servlet.ModelAndView;
 
 	import com.example.demo.model.CongViec;
-	import com.example.demo.service.CongViecSv;
+import com.example.demo.model.NhanVien;
+import com.example.demo.service.CongViecSv;
+import com.example.demo.service.NhanVienSv;
 
 	@Controller
 	public class CongVieccontroller {
 		@Autowired
 		private CongViecSv service;
+		@Autowired
+		private NhanVienSv service1;
 		
 		@RequestMapping("/congviec")
 		public String viewHomePage(Model model) {
@@ -29,7 +33,9 @@ package com.example.demo.controller;
 		@RequestMapping("/themCongViec")
 		public String showNewCongViecPage(Model model) {
 		    CongViec CongViec = new CongViec();
-		    model.addAttribute("CongViec", CongViec);	     
+		    model.addAttribute("CongViec", CongViec);
+		    List<NhanVien> listnhanvien= service1.listAll();
+		    model.addAttribute("listnhanvien", listnhanvien);
 		    return "themCongViec";
 		}
 		

@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class ChucVu {
 		@Id
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
-		@Column(name = "machuvu")
+		@Column(name = "machucvu")
 	    private Integer machucvu;
 		private String chucvu,heso;
 		public Integer getMachucvu() {

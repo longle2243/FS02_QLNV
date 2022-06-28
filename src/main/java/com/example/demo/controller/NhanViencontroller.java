@@ -11,13 +11,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.demo.model.ChucVu;
 import com.example.demo.model.NhanVien;
+import com.example.demo.service.ChucVuSv;
 import com.example.demo.service.NhanVienSv;
 
 @Controller
 public class NhanViencontroller {
 	@Autowired
 	private NhanVienSv service;
+	@Autowired
+	private ChucVuSv service1;
 	
 	@RequestMapping("/")
 	public String viewHomePage(Model model) {
@@ -29,7 +33,9 @@ public class NhanViencontroller {
 	@RequestMapping("/themnhanvien")
 	public String showNewnhanvienPage(Model model) {
 	    NhanVien nhanvien = new NhanVien();
-	    model.addAttribute("nhanvien", nhanvien);	     
+	    model.addAttribute("nhanvien", nhanvien);	
+	    List<ChucVu> listChucVu= service1.listAll();
+	    model.addAttribute("listchucvu", listChucVu);
 	    return "themnhanvien";
 	}
 	
@@ -43,7 +49,7 @@ public class NhanViencontroller {
 	public ModelAndView showEditProductPage(@PathVariable(name = "id") int id) {
 	    ModelAndView mav = new ModelAndView("editnhanvien");
 	    NhanVien nhanvien = service.get(id);
-	    mav.addObject("nhanvien", nhanvien);     
+	    mav.addObject("nhanvien", nhanvien);  
 	    return mav;
 	}
 	

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:th="http://www.thymeleaf.org">
+	xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8" />
 <title>Chỉnh sửa nhân viên</title>
@@ -11,30 +11,45 @@
 	crossorigin="anonymous">
 </head>
 <body style="background-color: lightgoldenrodyellow;">
-    <div class="container border"
+	<div class="container border"
 		style="width: 500px; height: 450px; margin-top: 150px; background-color: white;">
-        <h1 class="text-center" style="padding-top: 10px">CHỈNH SỬA NHÂN VIÊN</h1>
-        <form action="#" th:action="@{/save}" th:object="${nhanvien}"
-            method="post">
-            <div class="mb-3">
-				<label>ID:</label> <input type="text" class="form-control" th:field="*{manhanvien}" readonly="readonly">
-			</div>
-			
-            <div class="mb-3">
-				<label>HỌ & TÊN:</label> <input type="text" class="form-control" th:field="*{hoten}">
-			</div>
-            <div class="mb-3">
-				<label>SỐ ĐIỆN THOẠI:</label> <input type="text" class="form-control" th:field="*{sdt}">
+		<h1 class="text-center" style="padding-top: 10px">CHỈNH SỬA NHÂN
+			VIÊN</h1>
+		<form action="#" th:action="@{/save}" th:object="${nhanvien}"
+			method="post">
+			<div class="mb-3">
+				<label>ID:</label> <input type="text" class="form-control"
+					th:field="*{manhanvien}" readonly="readonly">
 			</div>
 
 			<div class="mb-3">
-				<label>EMAIL:</label> <input type="email" class="form-control" th:field="*{email}" >
+				<label>HỌ & TÊN:</label> <input type="text" class="form-control"
+					th:field="*{hoten}">
+			</div>
+
+			<div class="mb-3">
+				<label>CHỨC VỤ:</label> <input type="text" class="form-control"
+					th:field="*{chucvu.chucvu}" readonly="readonly">
+			<!-- 	<select class="form-control" th:field="*{chucvu}" th:fragment="optionchucvu">
+					<option th:replace="~{fragments/optionchucvu :: optionchucvu}"></option>
+				</select>
+			 -->
+			</div>
+
+			<div class="mb-3">
+				<label>SỐ ĐIỆN THOẠI:</label> <input type="text"
+					class="form-control" th:field="*{sdt}">
+			</div>
+
+			<div class="mb-3">
+				<label>EMAIL:</label> <input type="email" class="form-control"
+					th:field="*{email}">
 			</div>
 
 			<div class="text-center">
 				<button type="submit" class="btn btn-primary text-center">Thêm</button>
 			</div>
-        </form>
-    </div>
+		</form>
+	</div>
 </body>
 </html>
