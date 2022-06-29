@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Trang Công việc</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+	integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+	crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/css/icon/themify-icons-font/themify-icons/themify-icons.css">
+  <style>
+        body{
+            background: rgba(231, 239, 250, 0.6);
+        }
+        .control .ti-home{
+            font-size: 14px;
+            text-align: center;
+            font-weight: bolder;
+            float: right;
+            right: 80px;
+            width: 110px;
+            top: 10px;
+            color: #007bff;
+            padding: 5px 10px 5px 3px;
+            border-radius: 7px;
+            text-decoration: none;
+            background-color: #FFFFFF;
+            border: 1px solid #007bff ;
+            position:absolute;
+        }
+
+        .control .ti-power-off{
+            font-size: 14px;
+            font-weight: bolder;
+            float: right;
+            right: 10px;
+            width: 65px;
+            top: 10px;
+            color: #007bff;
+            padding: 5px 0px 5px 3px;
+            border-radius: 7px;
+            text-decoration: none;
+            background-color: #FFFFFF;
+            border: 1px solid #007bff ;
+            position:absolute;
+        }
+    </style>
+</head>
+<body>
+  <!--Header-->
+  <div id="header">
+    <div>
+        <p style="color: #FF9000;">QUẢN LÝ NHÂN VIÊN </p><br>
+    </div>
+    <div class="control" style="margin: 20px;">
+        <a class="ti-home" href= "" >  Trang chủ</a>
+        <a href="dangxuat.html" class="ti-power-off"> Thoát</a>
+    </div>
+    <div class="logo">
+        <a href="">USER</a>
+    </div>
+    
+</div>
+
+<!--Navigation-->
+<div id="nav">
+    <div class="dashbroad">
+        <ul class="menu">
+            <li class="ti-harddrives">
+                <a href="congviec.html">Công việc</a>
+            </li>
+            <li class="ti-user">
+                <a href="thanhvien.html" target="_self">Thành viên</a>
+            </li>
+            <li class="ti-bell">
+                <a href="calam.html">Ca làm</a>
+            </li>
+            <li class="ti-bar-chart">
+                <a href="luong.html">Lương</a>
+            </li>
+            <li class="ti-settings">
+                <a href="thietlap.html">Thiết lập</a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+    <div id="container" >
+        <div>
+            <ol class="breadcrumb" style="margin-left: 60px; margin-top: 70px; background-color: rgba(231, 239, 250, 0) ;">
+                <li><a href="congviec.html">Danh sách</a></li>
+                <li><a href="xem.html">Xem chi tiết</a></li>
+
+                <li class="active"></li>
+
+                <br>
+
+                <hr style="margin: 0.5em 20px 0em 0px; border-color: #007bff;">
+            </ol><br>
+        </div> 
+    </div>
+
+    <div class="row" style="width: auto;">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="panel panel-primary" style="margin-left: 70px; margin-right: 70px;">
+                    <div class="panel-heading"><b>CHI TIẾT CÔNG VIỆC</b></div>
+                        <table class="table" >
+                            <div class="callout callout-info" style="margin-top: 15px;">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-sm-7" style="margin-left: 10px;">
+                                            <dl>
+                                                <dt><b class="border-bottom border-primary">Nhiệm vụ</b></dt>
+                                              
+                                                <dd>ddddddddddddddd</dd>
+                                            </dl>
+                                            
+                                        
+                                            <dl>
+                                                <dt><b class="border-bottom border-primary">Nội dung</b></dt>
+                                                <dd>ggggggggggggggggggggggggggggggg</dd>
+                                            </dl>
+                                            <dl>
+                                                <dt><b class="border-bottom border-primary"> Ghi chú</b></dt>
+                                                <dd>hhhhhhhhhhhhhhhhhhhhhhhhhhhhh</dd>
+                                            </dl>
+                                        </div>
+                                        <div class="col-md-4"  >
+                                            <dl>
+                                                <dt><b class="border-bottom border-primary">Thời gian thực hiện</b></dt>
+                                                <dd>05/6/2022</dd>
+                                            </dl>
+                                            <dl>
+                                                <dt><b class="border-bottom border-primary">Thời gian kết thúc</b></dt>
+                                                <dd>01/7/2022</dd>
+
+                                            </dl>
+                                            <dl>
+                                                <dt><b class="border-bottom border-primary">Người giám sát</b></dt>
+                                                <dd>
+                                                    <!-- <img src="./assets/css/img/teacher.jpg" alt="..." class="img-circle" style="width: 40px; height: 40px;"> -->
+                                                <dd>bbbbbbbbbbbbbbbbbb</dd>
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt><b class="border-bottom border-primary">Người thực hiện</b></dt>
+                                                <dd>
+                                                    <!-- <img src="./assets/css/img/teacher.jpg" alt="..." class="img-circle" style="width: 40px; height: 40px;"> -->
+                                                <dd>aaaaaaaaaaaaaaa</dd>
+                                                </dd>
+                                            </dl>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </table>
+                    </div>
+                </div>
+            </div>
+</body>
+</html>

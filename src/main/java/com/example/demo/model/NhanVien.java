@@ -18,7 +18,8 @@ public class NhanVien {
 	@Column(name = "manhanvien")
     private Integer manhanvien;
 	private String hoten,sdt,email;
-	@ManyToOne(cascade = CascadeType.ALL)
+	
+	@ManyToOne
 	@JoinColumn(name="machucvu")
 	private ChucVu chucvu;
 	public Integer getManhanvien() {

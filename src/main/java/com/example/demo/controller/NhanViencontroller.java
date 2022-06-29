@@ -58,10 +58,17 @@ public class NhanViencontroller {
 	    service.delete(id);
 	    return "redirect:/";       
 	}
-	
 	@RequestMapping("/tkluong")
 	public String getdangki() {
 	return "tkluong";
+	}
+	
+	@RequestMapping("/canhan/{id}")
+	public ModelAndView showuser(@PathVariable(name = "id") int id) {
+	    ModelAndView mav = new ModelAndView("canhan");
+	    NhanVien nhanvien = service.get(id);
+	    mav.addObject("nhanvien", nhanvien);  
+	    return mav;
 	}
 }
 

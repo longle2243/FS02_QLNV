@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+	integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+	crossorigin="anonymous">
+	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+</head>
+<body>
+	<div th:replace="~{fragments/header :: header}"></div>
+	<div class="container">
+		<br>
+		<button type="button" class="btn btn-success"><a class="nav-link text-white" th:href="@{/themcalam}">Thêm ca làm</a></button>
+		<div class="card mt-5">
+			<div class="card-header text-white bg-primary">
+				<h2>Danh sách ca làm</h2>
+			</div>
+			<div class="card-body  text-center">
+					<!-- Table -->
+			 	<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Buổi</th>
+							<th>Thời gian</th>
+							<th>Địa điểm</th>
+							<th>Tùy chỉnh</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="calam:${listcalam}">
+							<td th:text="${calam.macalam}" />
+							<td th:text="${calam.buoi}" />
+							<td th:text="${calam.thoigian}" />
+							<td th:text="${calam.diadiem}" />
+							<td><a class="btn btn-info" th:href="@{'/editcalam/' + ${calam.macalam}}">Edit</a>
+								<a class="btn btn-danger" th:href="@{'/deletecalam/' + ${calam.macalam}}">Delete</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
