@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Trang Cá Nhân</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+	integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+	crossorigin="anonymous">
+<meta charset="UTF-8">
+<link rel="canonical"
+	href="https://getbootstrap.com/docs/5.2/examples/sidebars/">
+
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link th:href="@{/css/sidebars.css}" rel="stylesheet">
+<script src="https://kit.fontawesome.com/fdbbe77180.js"
+	crossorigin="anonymous"></script>
+</head>
+<body>
+	<div th:replace="~{fragments/headeruser :: headeruser}"></div>
+	<div class="container">
+		<div class="card mt-5">
+			<div class="card-header text-white bg-primary">
+				<h2>Thông tin cá nhân</h2>
+			</div>
+			<div class="card-body">
+				<table class="table table-borderless">
+				<tbody>
+					<tr th:each="nhanvien:${listnhanvien}"></tr>
+					<tr>
+						<th><h7 class="card-title">Họ và Tên</h7></th>
+						<td th:text="${nhanvien.hoten}" />
+					</tr>
+					<tr>
+						<th><h7 class="card-title">Chức vụ</h7></th>
+						<td th:text="${nhanvien.chucvu.chucvu}" />
+					<tr>
+					<tr>
+						<th><h7 class="card-title">Số điện thoại</h7></th>
+						<td th:text="${nhanvien.sdt}" />
+					<tr>
+					<tr>
+						<th class="card-title">Email</th>
+						<td th:text="${nhanvien.email}" />
+					<tr>
+				</tbody>
+			</table>
+			<a class="btn btn-info"
+				th:href="@{'/edit/' + ${nhanvien.manhanvien}}">Chỉnh sửa thông
+				tin</a>
+			</div>
+		</div>
+</body>
+</html>

@@ -10,13 +10,11 @@
 	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
 </head>
 <body>
-	<div th:replace="~{fragments/header :: header}"></div>
+	<div th:replace="~{fragments/headeruser :: headeruser}"></div>
 	<div class="container">
-		<br>
-		<button type="button" class="btn btn-success"><a class="nav-link text-white" th:href="@{/themCongViec}">Thêm Công Việc</a></button>
 		<div class="card mt-5">
-			<div class="card-header text-white bg-primary">
-				<h2>Danh sách công việc</h2>
+			<div class="card-header text-white bg-secondary">
+				<h2>Công việc của bạn</h2>
 			</div>
 			<div class="card-body  text-center">
 					<!-- Table -->
@@ -27,7 +25,7 @@
 							<th>Công Việc</th>
 							<th>Người giao</th>
 							<th>Nội dung</th>
-							<th>Tùy chỉnh</th>
+							<th>Buổi</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -36,8 +34,6 @@
 							<td th:text="${congviec.congviec}" />
 							<td th:text="${congviec.nguoigiaoviec}" />
 							<td th:text="${congviec.noidung}" />
-							<td><a class="btn btn-info" th:href="@{'/editCongViec/' + ${congviec.macongviec}}">Edit</a>
-								<a class="btn btn-danger" th:href="@{'/deleteCongViec/' + ${congviec.macongviec}}">Delete</a></td>
 						</tr>
 					</tbody>
 				</table>

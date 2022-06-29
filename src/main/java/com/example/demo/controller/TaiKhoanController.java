@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,7 +9,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.validation.BindingResult;
+
+import com.example.demo.model.NhanVien;
 import com.example.demo.model.TaiKhoan;
+import com.example.demo.service.NhanVienSv;
 import com.example.demo.service.SecurityService;
 import com.example.demo.service.TaiKhoanService;
 
@@ -21,6 +26,9 @@ public class TaiKhoanController {
 
     @Autowired
     private TaiKhoanValidator taiKhoanValidator;
+    
+	@Autowired
+	private NhanVienSv service;
 
     @GetMapping("/registration")
     public String registration(Model model) {
@@ -65,6 +73,8 @@ public class TaiKhoanController {
 
     @GetMapping({"/", "/index"})
     public String welcome(Model model) {
+	    List<NhanVien> listnhanvien= service.listAll();
+	    model.addAttribute("listnhanvien", listnhanvien);
         return "index";
     }
 }

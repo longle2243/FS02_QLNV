@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+	integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+	crossorigin="anonymous">
+	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+</head>
+<body>
+	<div th:replace="~{fragments/headeruser :: headeruser}"></div>
+	<div class="container">
+		<div class="card mt-5">
+			<div class="card-header text-white bg-secondary">
+				<h2>Lương của bạn</h2>
+			</div>
+			<div class="card-body  text-center">
+					<!-- Table -->
+			 	<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Tên Nhân Viên </th>
+							<th>Số Ca</th>
+							<th>Tiền Lương</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+			</div>
+		</div>
+</body>
+</html>
+
+
+
+
+
+
+
+

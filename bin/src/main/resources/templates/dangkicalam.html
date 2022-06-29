@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>ĐĂNG KÍ CA LÀM</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+</head>
+<body style="background-color: lightgoldenrodyellow;">
+	<div th:replace="~{fragments/headeruser :: headeruser}"></div>
+	<div class="container border"
+		style="width: 500px; height: 400px; margin-top: 150px; background-color: white;">
+		<h1 class="text-center" style="padding-top: 10px">ĐĂNG KÍ CA LÀM</h1>
+		<form action="#" th:action="@{/savechamcong}" th:object="${chamcong}"
+			method="post">
+			<div class="mb-3">
+				<label>ID:</label> <input type="text" class="form-control"
+					th:field="*{nhanvien}">
+			</div>
+			<div class="mb-3">
+				<label>CA LÀM:</label> <select class="form-control"
+					th:field="*{calam}">
+					<option value="0">chọn ca làm</option>
+					<option th:each="calam : ${listcalam}" th:value="${calam.macalam}"
+						th:text="${calam.buoi}"></option>
+				</select>
+			</div>
+
+			<div class="mb-3">
+				<label>CÔNG VIỆC:</label> <select class="form-control"
+					th:field="*{congviec}">
+					<option value="0">chọn công việc</option>
+					<option th:each="congviec : ${listcongviec}"
+						th:value="${congviec.macongviec}" th:text="${congviec.congviec}"></option>
+				</select>
+			</div>
+
+			<div class="text-center">
+				<button type="submit" class="btn btn-primary text-center">Đăng
+					kí ca làm</button>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
