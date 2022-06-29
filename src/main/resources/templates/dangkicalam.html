@@ -18,7 +18,12 @@
 		<form action="#" th:action="@{/savechamcong}" th:object="${chamcong}"
 			method="post">
 			<div class="mb-3">
-				<label>CA LÀM:</label> <select class="form-control"	th:field="*{calam}">
+				<label>ID:</label> <input type="text" class="form-control"
+					th:field="*{nhanvien}">
+			</div>
+			<div class="mb-3">
+				<label>CA LÀM:</label> <select class="form-control"
+					th:field="*{calam}">
 					<option value="0">chọn ca làm</option>
 					<option th:each="calam : ${listcalam}" th:value="${calam.macalam}"
 						th:text="${calam.buoi}"></option>
@@ -26,16 +31,17 @@
 			</div>
 
 			<div class="mb-3">
-				<label>CA LÀM:</label> <select class="form-control"
+				<label>CÔNG VIỆC:</label> <select class="form-control"
 					th:field="*{congviec}">
 					<option value="0">chọn công việc</option>
-					<option th:each="congviec : ${listcongviec}" th:value="${congviec.macongviec}"
-						th:text="${congviec.congviec}"></option>
+					<option th:each="congviec : ${listcongviec}"
+						th:value="${congviec.macongviec}" th:text="${congviec.congviec}"></option>
 				</select>
 			</div>
 
 			<div class="text-center">
-				<button type="submit" class="btn btn-primary text-center">Đăng kí ca làm</button>
+				<button type="submit" class="btn btn-primary text-center">Đăng
+					kí ca làm</button>
 			</div>
 		</form>
 	</div>

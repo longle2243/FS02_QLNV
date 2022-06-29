@@ -44,6 +44,6 @@ public class ChamCongcontroller {
 		@RequestMapping(value = "/savechamcong", method = RequestMethod.POST)
 		public String saveProduct(@ModelAttribute("ChamCong") ChamCong ChamCong) {
 		    service.save(ChamCong);
-		    return "redirect:/";
+		    return "redirect:/canhan";
 		}
 }

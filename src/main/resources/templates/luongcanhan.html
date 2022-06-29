@@ -14,7 +14,7 @@
 	<div class="container">
 		<div class="card mt-5">
 			<div class="card-header text-white bg-secondary">
-				<h2>Công việc của bạn</h2>
+				<h2>Lương của bạn</h2>
 			</div>
 			<div class="card-body  text-center">
 					<!-- Table -->
@@ -22,19 +22,12 @@
 					<thead>
 						<tr>
 							<th>ID</th>
-							<th>Công Việc</th>
-							<th>Người giao</th>
-							<th>Nội dung</th>
-							<th>Buổi</th>
+							<th>Tên Nhân Viên </th>
+							<th>Số Ca</th>
+							<th>Tiền Lương</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="congviec:${listCongViec}">
-							<td th:text="${congviec.macongviec}" />
-							<td th:text="${congviec.congviec}" />
-							<td th:text="${congviec.nguoigiaoviec}" />
-							<td th:text="${congviec.noidung}" />
-						</tr>
 					</tbody>
 				</table>
 			</div>

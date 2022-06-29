@@ -58,4 +58,11 @@ import com.example.demo.service.NhanVienSv;
 		    service.delete(id);
 		    return "redirect:/congviec";       
 		}
+		
+		@RequestMapping("/congvieccanhan")
+		public String viewcongviecuser(Model model) {
+		    List<CongViec> listCongViec= service.listAll();
+		    model.addAttribute("listCongViec", listCongViec);
+		    return "congvieccanhan";
+		}
 	}

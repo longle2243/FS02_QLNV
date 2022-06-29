@@ -70,6 +70,11 @@ public class NhanViencontroller {
 	    mav.addObject("nhanvien", nhanvien);  
 	    return mav;
 	}
+	
+	@RequestMapping("/luongcanhan")
+	public String getluongcanhan() {
+	return "luongcanhan";
+	}
 }
 
 
