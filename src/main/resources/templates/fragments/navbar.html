@@ -5,61 +5,35 @@
 <title>Header</title>
 </head>
 <body>
- <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;" th:fragment="header">
-    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-      <span class="fs-4">QUẢN LÝ NHÂN VIÊN</span>
-    </a>
-    <hr>
-    <ul class="nav nav-pills flex-column mb-auto">
-      <li class="nav-item">
-        <a th:href="@{/congviec}" class="nav-link text-white">
-          <span><i class="fa-solid fa-briefcase"></i>&nbsp;&nbsp;
-            CÔNG VIỆC</span>
-        </a>
-      </li>
-      <li>
-      <!-- href="nv.html"  -->
-        <a th:href="@{/nhanvien}" class="nav-link text-white">
-          <span>
-            <i class="fa-solid fa-id-card"></i>&nbsp;&nbsp;
-            NHÂN VIÊN
-          </span>
-        </a>
-      </li>
-      <!-- tk.html -->
-      <!-- href="calam.html" -->
-        <a  th:href="@{/calam}" class="nav-link text-white">
-          <span>
-            <i class="fa-solid fa-calendar"></i>&nbsp;&nbsp;
-            CA LÀM
-          </span>
-        </a>
-      </li>
-      <li>
-      <!-- href="#"  -->
-        <a th:href="@{/tkluong}" class="nav-link active" aria-current="page">
-          <span>
-            <i class="fa-solid fa-chart-simple"></i>&nbsp;&nbsp;
-            THỐNG KÊ LƯƠNG
-          </span>
-        </a>
-      </li>
-    </ul>
-    <hr>
-    <div class="dropdown">
-      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-        <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-        <strong>mdo</strong>
-      </a>
-      <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-        <li><a class="dropdown-item" href="#">Settings</a></li>
-        <li><a class="dropdown-item" href="#">Profile</a></li>
-        <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="#">Sign out</a></li>
-      </ul>
-    </div>
-  </div>
+	<div class="d-flex flex-column  flex-shrink-0 p-3 text-white bg-primary"
+		style="width: 280px;" th:fragment="header">
+		<a th:href="@{/canhan/1}"
+			class="d-flex align-items-center mb-3 mb-md-0 me-md-auto nav-link text-white text-decoration-none">
+			<span class="fs-4 font-weight-bold">ADMIN</span>
+		</a>
+		<hr>
+		<ul class="nav nav-pills flex-column mb-auto">
+			<li><a th:href="@{/index}" class="nav-link text-white"> <span>
+				<i class="fa-solid fa-id-card"></i>&nbsp;&nbsp; NHÂN VIÊN</span>
+			</a></li>
+			
+			<li><a th:href="@{/chucvu}" class="nav-link text-white"> <span> 
+				<i class="fa-solid fa-marker"></i>&nbsp;&nbsp; CHỨC VỤ</span>
+			</a></li>
+			
+			<li><a th:href="@{/congviec}" class="nav-link text-white"> <span> 
+				<i class="fa-solid fa-briefcase"></i>&nbsp;&nbsp; CÔNG VIỆC</span>
+			</a></li>
+
+			<li><a th:href="@{/calam}" class="nav-link text-white"> <span>
+				<i class="fa-solid fa-calendar"></i>&nbsp;&nbsp; CA LÀM</span>
+			</a></li>
+			
+			<li><a th:href="@{/tkluong}" class="nav-link text-white"> <span> 
+				<i class="fa-solid fa-chart-simple"></i>&nbsp;&nbsp; THỐNG KÊ</span>
+			</a></li>
+		</ul>
+	</div>
 </body>
 </html>
 
- 

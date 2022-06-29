@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -14,7 +16,10 @@ public class CaLam {
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
 		@Column(name = "macalam")
 	    private Integer macalam;
-		private String buoi,thoigian,diadiem;
+		private String buoi,diadiem;
+		@ManyToOne
+		@JoinColumn(name="macongviec")
+		private CongViec congviec;
 		public Integer getMacalam() {
 			return macalam;
 		}
@@ -27,21 +32,21 @@ public class CaLam {
 		public void setBuoi(String buoi) {
 			this.buoi = buoi;
 		}
-		public String getThoigian() {
-			return thoigian;
-		}
-		public void setThoigian(String thoigian) {
-			this.thoigian = thoigian;
-		}
 		public String getDiadiem() {
 			return diadiem;
 		}
 		public void setDiadiem(String diadiem) {
 			this.diadiem = diadiem;
 		}
+		public CongViec getCongviec() {
+			return congviec;
+		}
+		public void setCongviec(CongViec congviec) {
+			this.congviec = congviec;
+		}
 		@Override
 		public String toString() {
-			return "CaLam [macalam=" + macalam + ", buoi=" + buoi + ", thoigian=" + thoigian + ", diadiem=" + diadiem
+			return "CaLam [macalam=" + macalam + ", buoi=" + buoi + ", diadiem=" + diadiem + ", congviec=" + congviec
 					+ "]";
 		}
 		

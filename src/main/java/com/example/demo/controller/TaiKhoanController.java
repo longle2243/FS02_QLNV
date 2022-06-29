@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.validation.BindingResult;
 
+import com.example.demo.model.ChucVu;
 import com.example.demo.model.NhanVien;
 import com.example.demo.model.TaiKhoan;
+import com.example.demo.service.ChucVuSv;
 import com.example.demo.service.NhanVienSv;
 import com.example.demo.service.SecurityService;
 import com.example.demo.service.TaiKhoanService;
@@ -29,6 +31,9 @@ public class TaiKhoanController {
     
 	@Autowired
 	private NhanVienSv service;
+	
+	@Autowired
+	private ChucVuSv service1;
 
     @GetMapping("/registration")
     public String registration(Model model) {
@@ -75,6 +80,8 @@ public class TaiKhoanController {
     public String welcome(Model model) {
 	    List<NhanVien> listnhanvien= service.listAll();
 	    model.addAttribute("listnhanvien", listnhanvien);
+	    List<ChucVu> listChucVu= service1.listAll();
+	    model.addAttribute("listchucvu", listChucVu);
         return "index";
     }
 }

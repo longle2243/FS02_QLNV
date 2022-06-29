@@ -27,6 +27,8 @@ public class NhanViencontroller {
 	public String viewHomePage(Model model) {
 	    List<NhanVien> listnhanvien= service.listAll();
 	    model.addAttribute("listnhanvien", listnhanvien);
+	    List<ChucVu> listChucVu= service1.listAll();
+	    model.addAttribute("listchucvu", listChucVu);
 	    return "index";
 	}
 	
