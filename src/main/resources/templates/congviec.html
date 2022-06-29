@@ -26,7 +26,6 @@
 							<th>ID</th>
 							<th>Công Việc</th>
 							<th>Người giao</th>
-							<th>Người thực hiện</th>
 							<th>Nội dung</th>
 							<th>Tùy chỉnh</th>
 						</tr>
@@ -36,7 +35,6 @@
 							<td th:text="${congviec.macongviec}" />
 							<td th:text="${congviec.congviec}" />
 							<td th:text="${congviec.nguoigiaoviec}" />
-							<td th:text="${congviec.nguoithuchien}" />
 							<td th:text="${congviec.noidung}" />
 							<td><a class="btn btn-info" th:href="@{'/editCongViec/' + ${congviec.macongviec}}">Edit</a>
 								<a class="btn btn-danger" th:href="@{'/deleteCongViec/' + ${congviec.macongviec}}">Delete</a></td>
