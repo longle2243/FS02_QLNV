@@ -48,10 +48,12 @@ public class NhanViencontroller {
 	}
 	
 	@RequestMapping("/edit/{id}")
-	public ModelAndView showEditProductPage(@PathVariable(name = "id") int id) {
+	public ModelAndView showEditProductPage(@PathVariable(name = "id") int id,Model model) {
 	    ModelAndView mav = new ModelAndView("editnhanvien");
 	    NhanVien nhanvien = service.get(id);
 	    mav.addObject("nhanvien", nhanvien);  
+	    List<ChucVu> listChucVu= service1.listAll();
+	    model.addAttribute("listchucvu", listChucVu);
 	    return mav;
 	}
 	
@@ -76,6 +78,15 @@ public class NhanViencontroller {
 	@RequestMapping("/luongcanhan")
 	public String getluongcanhan() {
 	return "luongcanhan";
+	}
+	
+	
+	@RequestMapping(value = "/laythongtinuser", method = RequestMethod.POST)
+	public ModelAndView showpageuser(@PathVariable(name = "id") int id) {
+	    ModelAndView mav = new ModelAndView("laythongtinuser");
+	    NhanVien nhanvien = service.get(id);
+	    mav.addObject("nhanviencanhan", nhanvien);  
+	    return mav;
 	}
 }
 

@@ -63,6 +63,8 @@ import com.example.demo.service.NhanVienSv;
 		public String viewcongviecuser(Model model) {
 		    List<CongViec> listCongViec= service.listAll();
 		    model.addAttribute("listCongViec", listCongViec);
+		  
 		    return "congvieccanhan";
 		}
+		
 	}

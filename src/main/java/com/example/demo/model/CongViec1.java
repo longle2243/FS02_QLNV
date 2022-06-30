@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-public class CongViec {
+public class CongViec1 {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "macongviec")
@@ -56,6 +56,17 @@ public class CongViec {
 		return "CongViec [macongviec=" + macongviec + ", congviec=" + congviec + ", buoi=" + buoi + ", diadiem="
 				+ diadiem + ", noidung=" + noidung + ", nguoigiao=" + nguoigiao + "]";
 	}
-		
+	public CongViec1(Integer macongviec, String congviec, String buoi, String diadiem, String noidung,
+			String nguoigiao) {
+		this.macongviec = macongviec;
+		this.congviec = congviec;
+		this.buoi = buoi;
+		this.diadiem = diadiem;
+		this.noidung = noidung;
+		this.nguoigiao = nguoigiao;
+	}
+	public CongViec1() {
+	}
+	
 	
 }

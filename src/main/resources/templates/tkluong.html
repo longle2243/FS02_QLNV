@@ -27,9 +27,7 @@
 		<div th:replace="~{fragments/navbar :: header}"></div>
 		<div class="b-example-divider b-example-vr"></div>
 		<div class="container">
-			<br>
-			<br>
-			<br>
+			<br> <br> <br>
 			<div class="card mt-5">
 				<div class="card-header text-white bg-primary">
 					<h2>Thống kê lương</h2>
@@ -37,15 +35,29 @@
 				<div class="card-body  text-center">
 					<!-- Table -->
 					<table class="table table-bordered">
-						<thead>
+						<thead class="table-primary">
 							<tr>
-								<th>ID</th>
-								<th>Họ & Tên</th>
-								<th>Tổng ca</th>
-								<th>Tổng lương</th>
+								<th>TÊN NHÂN VIÊN</th>
+								<th>CHỨC VỤ</th>
+								<th>TỔNG SỐ CA LÀM</th>
+								<th>HỆ SỐ LƯƠNG</th>
+								<th>TỔNG LƯƠNG</th>
 							</tr>
 						</thead>
 						<tbody>
+							<tr th:each="luong:${listchitiet}">
+								<td th:text="${luong[0]}" />
+								<td th:text="${luong[1]}" />
+								<td th:text="${luong[2]}" />
+								<td th:text="${luong[3]}" />
+								<td th:text="${luong[4]}" />
+								<!-- 							<td> -->
+								<!-- 						<a type="button" class="btn btn-warning" -->
+								<!-- 								th:href="@{'/showFormForUpdate/' + ${luong.maluong}}">Update</a>&nbsp; -->
+								<!-- 								<a type="button" class="btn btn-danger" -->
+								<!-- 								th:href="@{'/showFormForDelete/' + ${luong.maluong}}">Delete</a> -->
+								<!-- 							</td> -->
+							</tr>
 						</tbody>
 					</table>
 				</div>

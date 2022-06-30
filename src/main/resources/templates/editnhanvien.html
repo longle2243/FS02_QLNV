@@ -31,41 +31,43 @@
 				<h2>Chỉnh sửa nhân viên</h2>
 			</div>
 			<div class="card-body">
-						<form action="#" th:action="@{/save}" th:object="${nhanvien}"
-			method="post">
-			<div class="mb-3">
-				<label>ID:</label> <input type="text" class="form-control"
-					th:field="*{manhanvien}" readonly="readonly">
-			</div>
+				<form action="#" th:action="@{/save}" th:object="${nhanvien}"
+					method="post">
+					<div class="mb-3" style="display: none">
+						<label>ID:</label> <input type="text" class="form-control"
+							th:field="*{manhanvien}" readonly="readonly">
+					</div>
 
-			<div class="mb-3">
-				<label>HỌ & TÊN:</label> <input type="text" class="form-control"
-					th:field="*{hoten}">
-			</div>
+					<div class="mb-3">
+						<label>HỌ & TÊN:</label> <input type="text" class="form-control"
+							th:field="*{hoten}">
+					</div>
 
-			<div class="mb-3">
-				<label>CHỨC VỤ:</label> <input type="text" class="form-control"
-					th:field="*{chucvu.chucvu}" readonly="readonly">
-			<!-- 	<select class="form-control" th:field="*{chucvu}" th:fragment="optionchucvu">
-					<option th:replace="~{fragments/optionchucvu :: optionchucvu}"></option>
-				</select>
-			 -->
-			</div>
+					<div class="mb-3">
+						<label>CHỨC VỤ:</label>
+						<!-- 				<input type="text" class="form-control" th:field="*{chucvu.chucvu}"> -->
+						<select class="form-control" th:field="*{chucvu}">
+							<option value="0"></option>
+							<option th:each="chucvu : ${listchucvu}"
+								th:value="${chucvu.machucvu}" th:text="${chucvu.chucvu}"></option>
+						</select>
 
-			<div class="mb-3">
-				<label>SỐ ĐIỆN THOẠI:</label> <input type="text"
-					class="form-control" th:field="*{sdt}">
-			</div>
+					</div>
 
-			<div class="mb-3">
-				<label>EMAIL:</label> <input type="email" class="form-control"
-					th:field="*{email}">
-			</div>
+					<div class="mb-3">
+						<label>SỐ ĐIỆN THOẠI:</label> <input type="text"
+							class="form-control" th:field="*{sdt}">
+					</div>
 
-			<div class="text-center">
-				<button type="submit" class="btn btn-primary text-center">Thêm</button>
-			</div>
-		</form>
+					<div class="mb-3">
+						<label>EMAIL:</label> <input type="email" class="form-control"
+							th:field="*{email}">
+					</div>
+
+					<div class="text-center">
+						<button type="submit" class="btn btn-primary text-center">Thêm</button>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>

@@ -22,6 +22,7 @@ public class NhanVien {
 	@ManyToOne
 	@JoinColumn(name="machucvu")
 	private ChucVu chucvu;
+	
 	public Integer getManhanvien() {
 		return manhanvien;
 	}

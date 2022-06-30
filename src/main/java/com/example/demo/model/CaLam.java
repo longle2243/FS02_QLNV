@@ -16,7 +16,7 @@ public class CaLam {
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
 		@Column(name = "macalam")
 	    private Integer macalam;
-		private String buoi,diadiem;
+		private String nguoithuchien;
 		@ManyToOne
 		@JoinColumn(name="macongviec")
 		private CongViec congviec;
@@ -26,17 +26,11 @@ public class CaLam {
 		public void setMacalam(Integer macalam) {
 			this.macalam = macalam;
 		}
-		public String getBuoi() {
-			return buoi;
+		public String getNguoithuchien() {
+			return nguoithuchien;
 		}
-		public void setBuoi(String buoi) {
-			this.buoi = buoi;
-		}
-		public String getDiadiem() {
-			return diadiem;
-		}
-		public void setDiadiem(String diadiem) {
-			this.diadiem = diadiem;
+		public void setNguoithuchien(String nguoithuchien) {
+			this.nguoithuchien = nguoithuchien;
 		}
 		public CongViec getCongviec() {
 			return congviec;
@@ -46,8 +40,7 @@ public class CaLam {
 		}
 		@Override
 		public String toString() {
-			return "CaLam [macalam=" + macalam + ", buoi=" + buoi + ", diadiem=" + diadiem + ", congviec=" + congviec
-					+ "]";
+			return "CaLam [macalam=" + macalam + ", nguoithuchien=" + nguoithuchien + ", congviec=" + congviec + "]";
 		}
 		
 		

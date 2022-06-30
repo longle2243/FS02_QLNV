@@ -26,51 +26,126 @@
 		<div th:replace="~{fragments/navbar :: header}"></div>
 		<div class="b-example-divider b-example-vr"></div>
 		<div class="card mt-5"
-			style="margin: 0 auto; width: 500px; height: 600px;">
+			style="margin: 0 auto; width: 500px; height: 500px;">
 			<div class="card-header text-white bg-primary">
-				<h2>Chỉnh sửa công việc</h2>
+				<h2>Tạo tài khoản</h2>
 			</div>
 			<div class="card-body">
-				<form action="#" th:action="@{/saveCongViec}"
-					th:object="${CongViec}" method="post">
-					<div class="mb-3" style="display: none">
-						<input type="text" class="form-control" th:field="*{macongviec}"
-							readonly="readonly">
+				<form class="form-signin" method="POST" th:object="${userForm}"
+					th:action="@{/registration}">
+					<div class="mb-3">
+						<label>TÀI KHOẢN:</label> <br> <input type="text"
+							th:field="*{username}" class="form-control"
+							placeholder="Username" autofocus="true"> <span
+							class="has-error" th:if="${#fields.hasErrors('username')}"
+							th:errors="*{username}"></span>
 					</div>
 
 					<div class="mb-3">
-						<label>CÔNG VIỆC:</label> <input type="text" class="form-control"
-							th:field="*{congviec}">
-					</div>
-					<div class="mb-3">
-						<label>BUỔI:</label> <select class="form-control"
-							th:field="*{buoi}">
-							<option value="Sáng">Buổi Sáng</option>
-							<option value="Chiều">Buổi Chiều</option>
-							<option value="Tối">Buổi Tối</option>
-						</select>
-					</div>
-					<div class="mb-3">
-						<label>ĐỊA ĐIỂM:</label> <input type="text" class="form-control"
-							th:field="*{diadiem}">
-					</div>
-					<div class="mb-3">
-						<label>NGƯỜI GIAO:</label> <input type="text" class="form-control"
-							th:field="*{nguoigiao}">
+						<label>MẬT KHẨU:</label> <br> <input type="password"
+							th:field="*{password}" class="form-control"
+							placeholder="Password"> <span class="has-error"
+							th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
 					</div>
 
 					<div class="mb-3">
-						<label>NỘI DUNG:</label> <input type="text" class="form-control"
-							th:field="*{noidung}">
+						<label>NHẬP LẠI MẬT KHẨU:</label> <br> <input type="password"
+							th:field="*{passwordConfirm}" class="form-control"
+							placeholder="Confirm your password"> <span
+							class="has-error" th:if="${#fields.hasErrors('passwordConfirm')}"
+							th:errors="*{passwordConfirm}"></span>
 					</div>
-
 					<div class="text-center">
-						<button type="submit" class="btn btn-primary text-center">Thêm</button>
+						<button type="submit"
+							class="btn btn-primary text-white text-center">Tạo tài
+							khoản</button>
 					</div>
 				</form>
-
 			</div>
 		</div>
 	</div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

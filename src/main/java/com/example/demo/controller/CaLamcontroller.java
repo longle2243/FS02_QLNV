@@ -22,13 +22,15 @@ import com.example.demo.service.CongViecSv;
 public class CaLamcontroller {
 	@Autowired
 	private CaLamSv service;
-	@Autowired
-	private CongViecSv service1;
+//	@Autowired
+//	private CongViecSv service1;
 	
 	@RequestMapping("/calam")
 	public String viewHomePage(Model model) {
 	    List<CaLam> listCaLam= service.listAll();
 	    model.addAttribute("listcalam", listCaLam);
+//	    List<CongViec> listCongViec= service1.listAll();
+//	    model.addAttribute("listcongviec", listCongViec);
 	    return "calam";
 	}
 	
@@ -36,8 +38,8 @@ public class CaLamcontroller {
 	public String showNewCaLamPage(Model model) {
 	    CaLam CaLam = new CaLam();
 	    model.addAttribute("calam", CaLam);	
-	    List<CongViec> listCongViec= service1.listAll();
-	    model.addAttribute("listcongviec", listCongViec);
+//	    List<CongViec> listCongViec= service1.listAll();
+//	    model.addAttribute("listcongviec", listCongViec);
 	    return "themcalam";
 	}
 	

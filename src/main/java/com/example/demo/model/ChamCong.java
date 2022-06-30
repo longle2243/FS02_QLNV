@@ -18,15 +18,11 @@ public class ChamCong {
 	@Column(name = "id")
 	private Integer id;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "manhanvien")
 	private NhanVien nhanvien;
 
-	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "macalam")
-	private CaLam calam;
-
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "macongviec")
 	private CongViec congviec;
 
@@ -46,14 +42,6 @@ public class ChamCong {
 		this.nhanvien = nhanvien;
 	}
 
-	public CaLam getCalam() {
-		return calam;
-	}
-
-	public void setCalam(CaLam calam) {
-		this.calam = calam;
-	}
-
 	public CongViec getCongviec() {
 		return congviec;
 	}
@@ -64,9 +52,7 @@ public class ChamCong {
 
 	@Override
 	public String toString() {
-		return "ChamCong [id=" + id + ", nhanvien=" + nhanvien + ", calam=" + calam + ", congviec=" + congviec + "]";
+		return "ChamCong [id=" + id + ", nhanvien=" + nhanvien + ", congviec=" + congviec + "]";
 	}
-
-	
 
 }

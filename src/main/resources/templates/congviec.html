@@ -27,7 +27,7 @@
 		<div th:replace="~{fragments/navbar :: header}"></div>
 		<div class="b-example-divider b-example-vr"></div>
 		<div class="container">
-			<br>
+		<br>
 			<button type="button" class="btn btn-info">
 				<a class="nav-link text-white" th:href="@{/themCongViec}">Thêm
 					Công Việc</a>
@@ -42,6 +42,8 @@
 						<thead>
 							<tr>
 								<th>ID</th>
+								<th>Buổi</th>
+								<th>Địa điêm</th>
 								<th>Công Việc</th>
 								<th>Người giao</th>
 								<th>Nội dung</th>
@@ -51,8 +53,10 @@
 						<tbody>
 							<tr th:each="congviec:${listCongViec}">
 								<td th:text="${congviec.macongviec}" />
+								<td th:text="${congviec.buoi}" />
+								<td th:text="${congviec.diadiem}" />
 								<td th:text="${congviec.congviec}" />
-								<td th:text="${congviec.nguoigiaoviec}" />
+								<td th:text="${congviec.nguoigiao}" />
 								<td th:text="${congviec.noidung}" />
 								<td><a class="btn btn-info"
 									th:href="@{'/editCongViec/' + ${congviec.macongviec}}">Edit</a>

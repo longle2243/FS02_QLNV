@@ -1,0 +1,26 @@
+package com.example.demo.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.example.demo.service.ChiTietCaLamService;
+
+@Controller
+public class ChiTietCaLamcontroller {
+	@Autowired
+	private ChiTietCaLamService chitietcalamService;
+	
+	@GetMapping("/chitietcalam")
+	public String viewindex(Model model) {
+		model.addAttribute("listchitietcalam",chitietcalamService.getAllChiTietCaLam());
+		return "chitietcalam";
+	}
+	
+	@GetMapping("/tkluong")
+	public String view(Model model) {
+		model.addAttribute("listchitiet",chitietcalamService.getAllthongkeluong());
+		return "tkluong";
+	}
+}

@@ -32,4 +32,8 @@ public class ChamCongSv {
 		public void delete(int id) {
 			repo.deleteById(id);
 		}
+		
+		public List<Object[]> congvieccanhan(Integer manv){
+			 return repo.congvieccuatoi(manv);
+		}	
 }

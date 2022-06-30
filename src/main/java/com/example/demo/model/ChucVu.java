@@ -14,7 +14,8 @@ public class ChucVu {
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
 		@Column(name = "machucvu")
 	    private Integer machucvu;
-		private String chucvu,heso;
+		private String chucvu;
+		private float heso;
 		public Integer getMachucvu() {
 			return machucvu;
 		}
@@ -27,16 +28,17 @@ public class ChucVu {
 		public void setChucvu(String chucvu) {
 			this.chucvu = chucvu;
 		}
-		public String getHeso() {
+		public float getHeso() {
 			return heso;
 		}
-		public void setHeso(String heso) {
+		public void setHeso(float heso) {
 			this.heso = heso;
 		}
 		@Override
 		public String toString() {
 			return "ChucVu [machucvu=" + machucvu + ", chucvu=" + chucvu + ", heso=" + heso + "]";
 		}
+		
 		
 		
 }

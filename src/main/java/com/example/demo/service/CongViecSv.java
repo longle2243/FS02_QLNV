@@ -31,4 +31,14 @@ import com.example.demo.repository.CongViecRepo;
 		public void delete(int id) {
 			repo.deleteById(id);
 		}
+		 
+		public List<Object[]> congviecsang(){
+			 return repo.congviecbuoisang();
+		}
+		public List<Object[]> congviecchieu(){
+			 return repo.congviecbuoichieu();
+		}
+		public List<Object[]> congviectoi(){
+			 return repo.congviecbuoitoi();
+		}		
 }

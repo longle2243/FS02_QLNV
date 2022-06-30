@@ -32,6 +32,7 @@ public class NhanVienSv {
 	public void delete(int id) {
 		repo.deleteById(id);
 	}
+	
 }
 
 

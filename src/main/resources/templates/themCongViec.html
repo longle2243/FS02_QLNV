@@ -26,7 +26,7 @@
 		<div th:replace="~{fragments/navbar :: header}"></div>
 		<div class="b-example-divider b-example-vr"></div>
 		<div class="card mt-5"
-			style="margin: 0 auto; width: 500px; height: 500px;">
+			style="margin: 0 auto; width: 500px; height: 600px;">
 			<div class="card-header text-white bg-primary">
 				<h2>Thêm Công Việc</h2>
 			</div>
@@ -40,9 +40,21 @@
 					</div>
 
 					<div class="mb-3">
+						<label>BUỔI:</label> <select class="form-control"
+							th:field="*{buoi}">
+							<option value="Sáng">Buổi Sáng</option>
+							<option value="Chiều">Buổi Chiều</option>
+							<option value="Tối">Buổi Tối</option>
+						</select>
+					</div>
+					<div class="mb-3">
+						<label>ĐỊA ĐIỂM:</label> <input type="text" class="form-control"
+							th:field="*{diadiem}" required>
+					</div>
+					<div class="mb-3">
 						<label>NGƯỜI GIAO:</label>
 						<!-- 	<input type="text" class="form-control" th:field="*{nguoigiaoviec}" required>  -->
-						<select class="form-control" th:field="*{nguoigiaoviec}">
+						<select class="form-control" th:field="*{nguoigiao}">
 							<option th:each="nhanvien : ${listnhanvien}"
 								th:value="${nhanvien.hoten}" th:text="${nhanvien.hoten}"></option>
 						</select>

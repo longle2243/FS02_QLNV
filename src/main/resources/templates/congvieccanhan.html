@@ -31,23 +31,25 @@
 				<h2>Công việc của bạn</h2>
 			</div>
 			<div class="card-body  text-center">
-					<!-- Table -->
 			 	<table class="table table-bordered">
 					<thead>
 						<tr>
-							<th>ID</th>
+							<th>Người thực hiện</th>
 							<th>Công Việc</th>
+							<th>Buổi</th>
+							<th>Địa điểm</th>
 							<th>Người giao</th>
 							<th>Nội dung</th>
-							<th>Buổi</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="congviec:${listCongViec}">
-							<td th:text="${congviec.macongviec}" />
-							<td th:text="${congviec.congviec}" />
-							<td th:text="${congviec.nguoigiaoviec}" />
-							<td th:text="${congviec.noidung}" />
+						<tr th:each="chamcong:${chamcong}">
+							<td th:text="${chamcong.nhanvien.hoten}" />
+							<td th:text="${chamcong.congviec.congviec}" />
+							<td th:text="${chamcong.congviec.buoi}" />
+							<td th:text="${chamcong.congviec.diadiem}" />
+							<td th:text="${chamcong.congviec.nguoigiao}" />
+							<td th:text="${chamcong.congviec.noidung}" />
 						</tr>
 					</tbody>
 				</table>

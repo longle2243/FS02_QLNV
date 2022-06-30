@@ -28,10 +28,10 @@
 		<div class="b-example-divider b-example-vr"></div>
 		<div class="container">
 			<br>
-			<button type="button" class="btn btn-info">
-				<a class="nav-link text-white" th:href="@{/themcalam}">Thêm Ca
-					Làm</a>
-			</button>
+			<!-- 			<button type="button" class="btn btn-info"> -->
+			<!-- 				<a class="nav-link text-white" th:href="@{/themcalam}">Thêm Ca -->
+			<!-- 					Làm</a> -->
+			<!-- 			</button> -->
 			<div class="card mt-5">
 				<div class="card-header text-white bg-primary">
 					<h2>Danh sách ca làm</h2>
@@ -45,19 +45,25 @@
 								<th>Buổi</th>
 								<th>Địa điểm</th>
 								<th>Công việc</th>
-								<th>Tùy chỉnh</th>
+								<th>Người giao</th>
+								<th>Người thực hiện</th>
+								<th>Nội dung</th>
+<!-- 								<th>Tùy chỉnh</th> -->
 							</tr>
 						</thead>
 						<tbody>
-							<tr th:each="calam:${listcalam}">
-								<td th:text="${calam.macalam}" />
-								<td th:text="${calam.buoi}" />
-								<td th:text="${calam.diadiem}" />
-								<td th:text="${calam.congviec.congviec}" />
-								<td><a class="btn btn-info"
-									th:href="@{'/editcalam/' + ${calam.macalam}}">Edit</a> <a
-									class="btn btn-danger"
-									th:href="@{'/deletecalam/' + ${calam.macalam}}">Delete</a></td>
+							<tr th:each="congviec :${listcongviec}">
+								<td th:text="${congviec.macongviec}" />
+								<td th:text="${congviec.buoi}" />
+								<td th:text="${congviec.diadiem}" />
+								<td th:text="${congviec.congviec}" />
+								<td th:text="${congviec.nguoigiao}" />
+								<td>quang long</td>
+								<td th:text="${congviec.noidung}" />
+<!-- 								<td><a class="btn btn-info" -->
+<!-- 									th:href="@{'/editcalam/' + ${calam.macalam}}">Edit</a> <a -->
+<!-- 									class="btn btn-danger" -->
+<!-- 									th:href="@{'/deletecalam/' + ${calam.macalam}}">Delete</a></td> -->
 							</tr>
 						</tbody>
 					</table>

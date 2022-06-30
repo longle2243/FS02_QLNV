@@ -34,7 +34,7 @@
 
 				<form action="#" th:action="@{/savechucvu}" th:object="${chucvu}"
 					method="post">
-					<div class="mb-3">
+					<div class="mb-3" style="display:none">
 						<label>ID:</label> <input type="text" class="form-control"
 							th:field="*{machucvu}" readonly="readonly">
 					</div>
