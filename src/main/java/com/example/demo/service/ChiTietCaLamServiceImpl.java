@@ -18,7 +18,11 @@ public class ChiTietCaLamServiceImpl implements ChiTietCaLamService {
 		return chitietcalamRepository.findAll();
 	}
 	@Override
-	public List<Object[]> getAllthongkeluong() {
-		return chitietcalamRepository.tkluong();
+	public List<Object[]> getAllthongkeluong(String batdau, String ketthuc) {
+		return chitietcalamRepository.tkluong(batdau,ketthuc);
 	}
+//	@Override
+//	public List<Object[]> getAllthongkeluong() {
+//		return chitietcalamRepository.tkluong();
+//	}
 }

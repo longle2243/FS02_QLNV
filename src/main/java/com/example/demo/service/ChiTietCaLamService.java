@@ -6,5 +6,6 @@ import com.example.demo.model.ChiTietCaLam;
 
 public interface ChiTietCaLamService {
 	List<ChiTietCaLam> getAllChiTietCaLam();
-	List<Object[]> getAllthongkeluong();
+	List<Object[]> getAllthongkeluong(String batdau, String ketthuc);
+//	List<Object[]> getAllthongkeluong();
 }

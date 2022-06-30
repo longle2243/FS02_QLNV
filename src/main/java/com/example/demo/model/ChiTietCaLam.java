@@ -1,5 +1,7 @@
 package com.example.demo.model;
 
+import java.util.Date;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -10,27 +12,24 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 @Table(name="ctcl")
 public class ChiTietCaLam {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idchitiet;
-	private String ngaydangky;
+	@DateTimeFormat(pattern="yyyy-MM-dd")
+	private Date ngaydangky;
 
 	@ManyToOne
-	@JoinColumn(name = "macalam")
-	private CaLam cl;
+	@JoinColumn(name = "macongviec")
+	private CongViec cl;
 
 	@ManyToOne
 	@JoinColumn(name = "manhanvien")
 	private NhanVien nv;
-
-	@Override
-	public String toString() {
-		return "ChiTietCaLam [idchitiet=" + idchitiet + ", ngaydangky=" + ngaydangky + ", cl=" + cl + ", nv=" + nv
-				+ "]";
-	}
 
 	public Integer getIdchitiet() {
 		return idchitiet;
@@ -40,19 +39,19 @@ public class ChiTietCaLam {
 		this.idchitiet = idchitiet;
 	}
 
-	public String getNgaydangky() {
+	public Date getNgaydangky() {
 		return ngaydangky;
 	}
 
-	public void setNgaydangky(String ngaydangky) {
+	public void setNgaydangky(Date ngaydangky) {
 		this.ngaydangky = ngaydangky;
 	}
 
-	public CaLam getCl() {
+	public CongViec getCl() {
 		return cl;
 	}
 
-	public void setCl(CaLam cl) {
+	public void setCl(CongViec cl) {
 		this.cl = cl;
 	}
 
@@ -64,16 +63,23 @@ public class ChiTietCaLam {
 		this.nv = nv;
 	}
 
-	public ChiTietCaLam() {
-		super();
+	@Override
+	public String toString() {
+		return "ChiTietCaLam [idchitiet=" + idchitiet + ", ngaydangky=" + ngaydangky + ", cl=" + cl + ", nv=" + nv
+				+ "]";
 	}
 
-	public ChiTietCaLam(Integer idchitiet, String ngaydangky, CaLam cl, NhanVien nv) {
-		super();
+	public ChiTietCaLam() {
+	}
+
+	public ChiTietCaLam(Integer idchitiet, Date ngaydangky, com.example.demo.model.CongViec cl,
+			com.example.demo.model.NhanVien nv) {
 		this.idchitiet = idchitiet;
 		this.ngaydangky = ngaydangky;
 		this.cl = cl;
 		this.nv = nv;
 	}
+	
+	
 }
 
