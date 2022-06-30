@@ -1,6 +1,5 @@
 package com.example.demo.service;
 
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -13,26 +12,27 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.example.demo.model.NhanVien;
 import com.example.demo.model.Role;
-import com.example.demo.model.TaiKhoan;
-import com.example.demo.repository.TaiKhoanRepository;
+import com.example.demo.repository.NhanVienRepo;
 
 @Service
-public class TaiKhoanDetailsServiceImpl implements UserDetailsService{
-    @Autowired
-    private TaiKhoanRepository taiKhoanRepository;
+public class NhanVienDetailsServiceImpl implements UserDetailsService {
+
+	@Autowired
+    private NhanVienRepo nhanVienRepository;
 
     @Override
     @Transactional(readOnly = true)
     public UserDetails loadUserByUsername(String username) {
-        TaiKhoan user = taiKhoanRepository.findByUsername(username);
-        if (user == null) throw new UsernameNotFoundException(username);
+        NhanVien nhanVien = nhanVienRepository.findByUsername(username);
+        if (nhanVien == null) throw new UsernameNotFoundException(username);
 
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
-        for (Role role : user.getRoles()){
+        for (Role role : nhanVien.getRoles()){
             grantedAuthorities.add(new SimpleGrantedAuthority(role.getName()));
         }
 
-        return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), grantedAuthorities);
+        return new org.springframework.security.core.userdetails.User(nhanVien.getUsername(), nhanVien.getPassword(), grantedAuthorities);
     }
 }
