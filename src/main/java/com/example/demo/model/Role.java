@@ -19,7 +19,7 @@ public class Role {
     private String name;
 
     @ManyToMany(mappedBy = "roles")
-    private Set<TaiKhoan> taiKhoan;
+    private Set<NhanVien> nhanVien;
 
     public Long getId() {
         return id;
@@ -37,13 +37,12 @@ public class Role {
         this.name = name;
     }
 
-	public Set<TaiKhoan> getTaiKhoan() {
-		return taiKhoan;
+	public Set<NhanVien> getNhanVien() {
+		return nhanVien;
 	}
 
-	public void setTaiKhoan(Set<TaiKhoan> taiKhoan) {
-		this.taiKhoan = taiKhoan;
+	public void setNhanVien(Set<NhanVien> nhanVien) {
+		this.nhanVien = nhanVien;
 	}
 
-  
 }

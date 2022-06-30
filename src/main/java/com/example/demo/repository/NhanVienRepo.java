@@ -9,4 +9,6 @@ import com.example.demo.model.NhanVien;
 public interface NhanVienRepo extends JpaRepository<NhanVien, Integer>{
 	@Query("SELECT u FROM NhanVien u WHERE u.hoten = :hoten")
 	NhanVien findUserById(@Param("hoten") String name);
+	
+	 NhanVien findByUsername(String username);
 }

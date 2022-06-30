@@ -11,6 +11,8 @@ import com.example.demo.model.ChiTietCaLam;
 
 @Repository
 public interface ChiTietCaLamRepository extends JpaRepository <ChiTietCaLam, Integer>{
+
+	List<Object[]> tkluong();
 //	@Query(value = "SELECT c.nv.hoten, c.nv.cvu.chucvu, COUNT(c.cl.macalam),c.nv.cvu.heso, SUM(c.cl.luongcalam) * c.nv.cvu.hesoluong FROM ChiTietCaLam AS c GROUP BY c.nv.manhanvien")
 //	List<Object[]> tkluong();
 }
