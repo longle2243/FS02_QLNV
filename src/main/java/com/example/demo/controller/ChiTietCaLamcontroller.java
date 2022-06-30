@@ -36,9 +36,14 @@ public class ChiTietCaLamcontroller {
 //		model.addAttribute("listchitiet",chitietcalamService.getAllthongkeluong());
 //		return "test";
 //	}
+//	@PostMapping("/test")
+//	public String viewtest(@RequestParam(value="batdau") String batdau ,@RequestParam(value="ketthuc") String ketthuc, Model model) {
+//		model.addAttribute("listchitiet",chitietcalamService.getAllthongkeluong(batdau,ketthuc));
+//		return "test";
+//	}
 	@PostMapping("/test")
-	public String viewtest(@RequestParam(value="batdau") String batdau ,@RequestParam(value="ketthuc") String ketthuc, Model model) {
-		model.addAttribute("listchitiet",chitietcalamService.getAllthongkeluong(batdau,ketthuc));
+	public String viewtest(@RequestParam(value="batdau") String batdau ,@RequestParam(value="ketthuc") String ketthuc,@RequestParam(value="manv") Integer manv, Model model) {
+		model.addAttribute("listchitiet",chitietcalamService.getAllthongkeluongnv(batdau,ketthuc,manv));
 		return "test";
 	}
 }
