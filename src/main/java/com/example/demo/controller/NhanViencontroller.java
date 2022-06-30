@@ -125,7 +125,12 @@ public class NhanViencontroller {
         }
         service.save(userForm);
         securityService.autoLogin(userForm.getUsername(), userForm.getPasswordConfirm());
+<<<<<<< HEAD
         return "redirect:/canhan";
+=======
+
+        return "redirect:/index";
+>>>>>>> 5cce3c5610f2aeadc82386fc899e1344d03256c4
     }
 
     @GetMapping("/login")
@@ -139,10 +144,17 @@ public class NhanViencontroller {
             model.addAttribute("message", "You have been logged out successfully.");
         return "login";
     }
+<<<<<<< HEAD
     
     // Đổi giao diện sau đăng nhập Admin User index - canhan
     @GetMapping({"/", "/canhan"})
     public String welcome(Model model) {
         return "canhan";
+=======
+
+    @GetMapping({"/", "/index"})
+    public String welcome(Model model) {
+        return "index";
+>>>>>>> 5cce3c5610f2aeadc82386fc899e1344d03256c4
     }
 }
