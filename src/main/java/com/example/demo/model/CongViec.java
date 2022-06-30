@@ -15,6 +15,8 @@ public class CongViec {
 	@Column(name = "macongviec")
     private Integer macongviec;
 	private String congviec,buoi,diadiem,noidung,nguoigiao;
+	private long luongcalam;
+	
 	public Integer getMacongviec() {
 		return macongviec;
 	}
@@ -51,11 +53,17 @@ public class CongViec {
 	public void setNguoigiao(String nguoigiao) {
 		this.nguoigiao = nguoigiao;
 	}
+	public long getLuongcalam() {
+		return luongcalam;
+	}
+	public void setLuongcalam(long luongcalam) {
+		this.luongcalam = luongcalam;
+	}
 	@Override
 	public String toString() {
 		return "CongViec [macongviec=" + macongviec + ", congviec=" + congviec + ", buoi=" + buoi + ", diadiem="
-				+ diadiem + ", noidung=" + noidung + ", nguoigiao=" + nguoigiao + "]";
+				+ diadiem + ", noidung=" + noidung + ", nguoigiao=" + nguoigiao + ", luongcalam=" + luongcalam + "]";
 	}
-		
+	
 	
 }
