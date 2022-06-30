@@ -124,7 +124,7 @@ public class NhanViencontroller {
 
         securityService.autoLogin(userForm.getUsername(), userForm.getPasswordConfirm());
 
-        return "redirect:/welcome";
+        return "redirect:/index";
     }
 
     @GetMapping("/login")
@@ -142,8 +142,8 @@ public class NhanViencontroller {
         return "login";
     }
 
-    @GetMapping({"/", "/welcome"})
+    @GetMapping({"/", "/index"})
     public String welcome(Model model) {
-        return "welcome";
+        return "index";
     }
 }
