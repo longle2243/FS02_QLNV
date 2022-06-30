@@ -23,20 +23,35 @@
 </head>
 <body>
 	<main class="d-flex flex-nowrap">
-		<div th:replace="~{fragments/navbaruser :: header}"></div>
+	<div th:replace="~{fragments/navbaruser :: header}"></div>
 		<div class="b-example-divider b-example-vr"></div>
 		<div class="container">
 			<br>
 			<h1 class="text-center">THỐNG KÊ LƯƠNG</h1>
-			<br>
-			<form action="#" th:action="@{/tkluong}" method="POST">
-				<label>Ngày bắt đầu:</label> <input type="date" id="batdau"
-					name="batdau"> <label>Ngày kết thúc:</label> <input
-					type="date" id="ketthuc" name="ketthuc"> <label>Ma
-					NV:</label> <input type="text" id="manv" name="manv">
-				<button type="submit">Liệt kê</button>
-			</form>
-			<br>
+			<br> <br>
+			<div id="dd">
+				<table class="table table-bordered text-center">
+					<thead class="table-primary">
+						<tr>
+							<th>TÊN NHÂN VIÊN</th>
+							<th>CHỨC VỤ</th>
+							<th>TỔNG SỐ CA LÀM</th>
+							<th>HỆ SỐ LƯƠNG</th>
+							<th>TỔNG LƯƠNG</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="luong:${listchitiet}">
+							<td th:text="${luong[0]}" />
+							<td th:text="${luong[1]}" />
+							<td th:text="${luong[2]}" />
+							<td th:text="${luong[3]}" />
+							<td th:text="${luong[4]}" />
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
 		</div>
 
 	</main>

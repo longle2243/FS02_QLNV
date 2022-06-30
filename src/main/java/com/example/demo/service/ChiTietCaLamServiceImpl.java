@@ -25,8 +25,4 @@ public class ChiTietCaLamServiceImpl implements ChiTietCaLamService {
 	public List<Object[]> getAllthongkeluongnv(String batdau, String ketthuc,Integer manv) {
 		return chitietcalamRepository.luongnv(batdau,ketthuc,manv);
 	}
-//	@Override
-//	public List<Object[]> getAllthongkeluong() {
-//		return chitietcalamRepository.tkluong();
-//	}
 }

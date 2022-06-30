@@ -23,8 +23,11 @@ public class NhanVien {
 	private Integer manhanvien;
 	private String hoten, sdt, email;
 
+	@ManyToOne
+	@JoinColumn(name = "machucvu")
+	private ChucVu chucvu;
+	
 	private String username;
-
 	private String password;
 
 	@Transient
@@ -32,10 +35,6 @@ public class NhanVien {
 
 	@ManyToMany
 	private Set<Role> roles;
-
-	@ManyToOne
-	@JoinColumn(name = "machucvu")
-	private ChucVu chucvu;
 
 	public Integer getManhanvien() {
 		return manhanvien;

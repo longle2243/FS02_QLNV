@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.model.ChucVu;
@@ -37,6 +38,7 @@ public class NhanViencontroller {
 	public String viewHomePage(Model model) {
 		List<NhanVien> listnhanvien = service.listAll();
 		model.addAttribute("listnhanvien", listnhanvien);
+		
 		List<ChucVu> listChucVu = service1.listAll();
 		model.addAttribute("listchucvu", listChucVu);
 		return "index";
@@ -78,14 +80,20 @@ public class NhanViencontroller {
 		return "tkluong";
 	}
 
-	@RequestMapping("/canhan/{id}")
-	public ModelAndView showuser(@PathVariable(name = "id") int id) {
-		ModelAndView mav = new ModelAndView("canhan");
-		NhanVien nhanvien = service.get(id);
-		mav.addObject("nhanvien", nhanvien);
-		return mav;
+//	@RequestMapping("/canhan/{id}")
+//	public ModelAndView showuser(@PathVariable(name = "id") int id) {
+//		ModelAndView mav = new ModelAndView("canhan");
+//		NhanVien nhanvien = service.get(id);
+//		mav.addObject("nhanvien", nhanvien);
+//		return mav;
+//	}
+	@PostMapping("/canhan")
+	public String viewuser(@RequestParam(value="username") String id, Model model) {
+		NhanVien listnhanvien = service.getthongtincanhan(id);
+		model.addAttribute("listnhanvien", listnhanvien);
+		return "canhan";
 	}
-
+	
 	@RequestMapping("/luongcanhan")
 	public String getluongcanhan() {
 		return "luongcanhan";
@@ -99,32 +107,25 @@ public class NhanViencontroller {
 		return mav;
 	}
 
-	// Login Nhan Vien
-
+	// LOGN IN USER
 	@GetMapping("/registration")
 	public String registration(Model model) {
 		if (securityService.isAuthenticated()) {
 			return "redirect:/";
 		}
-
 		model.addAttribute("userForm", new NhanVien());
-
 		return "registration";
 	}
 	
 	@PostMapping("/registration")
     public String registration(@ModelAttribute("userForm") NhanVien userForm, BindingResult bindingResult) {
         userValidator.validate(userForm, bindingResult);
-
         if (bindingResult.hasErrors()) {
             return "registration";
         }
-
         service.save(userForm);
-
         securityService.autoLogin(userForm.getUsername(), userForm.getPasswordConfirm());
-
-        return "redirect:/welcome";
+        return "redirect:/canhan";
     }
 
     @GetMapping("/login")
@@ -132,18 +133,16 @@ public class NhanViencontroller {
         if (securityService.isAuthenticated()) {
             return "redirect:/";
         }
-
         if (error != null)
             model.addAttribute("error", "Your username and password is invalid.");
-
         if (logout != null)
             model.addAttribute("message", "You have been logged out successfully.");
-
         return "login";
     }
-
-    @GetMapping({"/", "/welcome"})
+    
+    // Đổi giao diện sau đăng nhập Admin User index - canhan
+    @GetMapping({"/", "/canhan"})
     public String welcome(Model model) {
-        return "welcome";
+        return "canhan";
     }
 }

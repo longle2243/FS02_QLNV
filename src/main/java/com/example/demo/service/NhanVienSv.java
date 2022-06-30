@@ -48,4 +48,14 @@ public class NhanVienSv {
 		return repo.findByUsername(username);
 	}
 
+	public NhanVien getthongtincanhan(String username) {
+		return repo.thongtincannhan(username);
+	}
 }
+
+
+
+
+
+
+
