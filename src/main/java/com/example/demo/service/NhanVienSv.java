@@ -51,6 +51,10 @@ public class NhanVienSv {
 	public NhanVien getthongtincanhan(String username) {
 		return repo.thongtincannhan(username);
 	}
+	
+//	public List<Object[]> getinfouser(String username) {
+//		return repo.infocanhan(username);
+//	}
 }
 
 

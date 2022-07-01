@@ -3,6 +3,8 @@ package com.example.demo.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -87,10 +89,10 @@ public class NhanViencontroller {
 //		mav.addObject("nhanvien", nhanvien);
 //		return mav;
 //	}
-	@PostMapping("/canhan")
-	public String viewuser(@RequestParam(value="username") String id, Model model) {
-		NhanVien listnhanvien = service.getthongtincanhan(id);
-		model.addAttribute("listnhanvien", listnhanvien);
+
+	@RequestMapping("/canhan")
+	public String viewuser(Authentication auth, Model model) {
+		model.addAttribute("listnhanvien", service.getthongtincanhan(auth.getName()));
 		return "canhan";
 	}
 	
@@ -125,12 +127,7 @@ public class NhanViencontroller {
         }
         service.save(userForm);
         securityService.autoLogin(userForm.getUsername(), userForm.getPasswordConfirm());
-<<<<<<< HEAD
-        return "redirect:/canhan";
-=======
-
         return "redirect:/index";
->>>>>>> 5cce3c5610f2aeadc82386fc899e1344d03256c4
     }
 
     @GetMapping("/login")
@@ -144,17 +141,17 @@ public class NhanViencontroller {
             model.addAttribute("message", "You have been logged out successfully.");
         return "login";
     }
-<<<<<<< HEAD
     
     // Đổi giao diện sau đăng nhập Admin User index - canhan
-    @GetMapping({"/", "/canhan"})
-    public String welcome(Model model) {
-        return "canhan";
-=======
-
     @GetMapping({"/", "/index"})
     public String welcome(Model model) {
-        return "index";
->>>>>>> 5cce3c5610f2aeadc82386fc899e1344d03256c4
+    	return "index";
+    	
     }
+    
+//    public String welcome(Authentication auth) {
+////    	SecurityContextHolder.getContext().getAuthentication().getName();
+//        return auth.getName();
+//
+//    }
 }
