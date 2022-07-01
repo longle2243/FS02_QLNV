@@ -37,7 +37,14 @@
 						<label>ID:</label> <input type="text" class="form-control"
 							th:field="*{manhanvien}" readonly="readonly">
 					</div>
-
+					<div class="mb-3" style="display: none">
+						<label>USERNAME:</label> <input type="text" class="form-control"
+							th:field="*{username}"  readonly="readonly">
+					</div>
+					<div class="mb-3" style="display: none">
+						<label>PASSWORD: </label> <input type="text" class="form-control"
+							th:field="*{password}" readonly="readonly">
+					</div>
 					<div class="mb-3">
 						<label>HỌ & TÊN:</label> <input type="text" class="form-control"
 							th:field="*{hoten}">
@@ -45,9 +52,8 @@
 
 					<div class="mb-3">
 						<label>CHỨC VỤ:</label>
-						<!-- 				<input type="text" class="form-control" th:field="*{chucvu.chucvu}"> -->
-						<select class="form-control" th:field="*{chucvu}">
-							<option value="0"></option>
+						<!-- 				<input type="text" class="form-control" th:field="*{chucvu}"> -->
+						<select class="form-control" th:field="*{chucvu.machucvu}">
 							<option th:each="chucvu : ${listchucvu}"
 								th:value="${chucvu.machucvu}" th:text="${chucvu.chucvu}"></option>
 						</select>
@@ -63,9 +69,8 @@
 						<label>EMAIL:</label> <input type="email" class="form-control"
 							th:field="*{email}">
 					</div>
-
 					<div class="text-center">
-						<button type="submit" class="btn btn-primary text-center">Thêm</button>
+						<button type="submit" class="btn btn-primary text-center">Chỉnh sửa</button>
 					</div>
 				</form>
 			</div>

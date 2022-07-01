@@ -58,7 +58,7 @@ public class NhanViencontroller {
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
 	public String saveProduct(@ModelAttribute("nhanvien") NhanVien nhanvien) {
 		service.save(nhanvien);
-		return "redirect:/";
+		return "redirect:/index";
 	}
 
 	@RequestMapping("/edit/{id}")

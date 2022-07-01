@@ -33,12 +33,19 @@
 			<div class="card-body">
 				<form action="#" th:action="@{/saveCongViec}"
 					th:object="${CongViec}" method="post">
-
 					<div class="mb-3">
-						<label>CÔNG VIỆC:</label> <input type="text" class="form-control"
-							th:field="*{congviec}" required>
+						<input type="text" class="form-control"
+							placeholder="Nhập công việc" th:field="*{congviec}" required>
+					</div>
+					<div class="mb-3">
+						<input type="text" class="form-control"
+							placeholder="Nhập nội dung" th:field="*{noidung}" required>
 					</div>
 
+					<div class="mb-3">
+						<input type="text" class="form-control"
+							placeholder="Nhập địa điểm" th:field="*{diadiem}" required>
+					</div>
 					<div class="mb-3">
 						<label>BUỔI:</label> <select class="form-control"
 							th:field="*{buoi}">
@@ -48,10 +55,6 @@
 						</select>
 					</div>
 					<div class="mb-3">
-						<label>ĐỊA ĐIỂM:</label> <input type="text" class="form-control"
-							th:field="*{diadiem}" required>
-					</div>
-					<div class="mb-3">
 						<label>NGƯỜI GIAO:</label>
 						<!-- 	<input type="text" class="form-control" th:field="*{nguoigiaoviec}" required>  -->
 						<select class="form-control" th:field="*{nguoigiao}">
@@ -59,10 +62,9 @@
 								th:value="${nhanvien.hoten}" th:text="${nhanvien.hoten}"></option>
 						</select>
 					</div>
-
 					<div class="mb-3">
-						<label>NỘI DUNG:</label> <input type="text" class="form-control"
-							th:field="*{noidung}" required>
+						<label>LƯƠNG:</label> <input type="text" class="form-control"
+							th:field="*{luongcalam}" placeholder="Nhập mức lương" required>
 					</div>
 
 					<div class="text-center">
