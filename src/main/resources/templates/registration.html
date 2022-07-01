@@ -26,18 +26,18 @@
 						th:field="*{hoten}" placeholder="Nhập họ tên" required>
 				</div>
 
-				<div class="mb-3">
-					<input type="text" class="form-control" id="chucvu" name="chucvu"
-						th:field="*{chucvu.machucvu}" placeholder="Nhập mã chức vụ"
-						required>
-				</div>
-
 <!-- 				<div class="mb-3"> -->
-<!-- 					<input type="text" class="form-control" th:field="*{buoi}" required> -->
-<!-- 					<select class="form-control" th:field="*{chucvu.machucvu}"> -->
-<!-- 						<option value="1">Nhân Viên</option> -->
-<!-- 					</select> -->
+<!-- 					<input type="text" class="form-control" id="chucvu" name="chucvu" -->
+<!-- 						th:field="*{chucvu.machucvu}" placeholder="Nhập mã chức vụ" -->
+<!-- 						required> -->
 <!-- 				</div> -->
+
+				<div class="mb-3">
+					<input type="text" class="form-control" th:field="*{chucvu}" required>
+					<select class="form-control" th:field="*{chucvu.machucvu}">
+						<option value="1">Nhân Viên</option>
+					</select>
+				</div>
 				
 				<div class="mb-3">
 
