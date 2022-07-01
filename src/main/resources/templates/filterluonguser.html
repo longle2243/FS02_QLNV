@@ -25,37 +25,36 @@
 	<main class="d-flex flex-nowrap">
 		<div th:replace="~{fragments/navbaruser :: header}"></div>
 		<div class="b-example-divider b-example-vr"></div>
-		<div class="container"  style="margin: 0 auto ; width: 700px">
+		<div class="container"  style="margin: 0 auto ; width: 800px">
 			<br>
 			<h1 class="text-center text-primary">THỐNG KÊ LƯƠNG</h1>
 			<br>
-			<!-- 			<form action="#" th:action="@{/luonguser}" method="POST"> -->
-			<!-- 				<label>Ngày bắt đầu:</label> <input type="date" id="batdau" -->
-			<!-- 					name="batdau"> <label>Ngày kết thúc:</label> <input -->
-			<!-- 					type="date" id="ketthuc" name="ketthuc"> <label>Ma -->
-			<!-- 					NV:</label> <input type="text" id="manv" name="manv"> -->
-			<!-- 				<button type="submit">Liệt kê</button> -->
-			<!-- 			</form> -->
-			<form action="#" th:action="@{/luonguser}" method="POST"
-				class="center">
-				<div class="row">
-					<div class="col">
-						<input type="date" id="batdau" name=" batdau" class="form-control"
-							placeholder="Ngày bắt đầu:">
-					</div>
-					<div class="col">
-						<input type="date" id="ketthuc" name="ketthuc"
-							class="form-control" placeholder="Ngày kết thúc:">
-					</div>
-					<div class="col">
-						 <input type="text" id="manv" name="manv"
-							class="form-control" placeholder="Nhập ID">
-					</div>
-					<div class="col">
-						<button type="submit" class="btn btn-success">Liệt Kê</button>
-					</div>
-				</div>
-			</form>
+						<form action="#" th:action="@{/luonguser}" method="POST">
+							<label>Ngày bắt đầu:</label> <input type="date" id="batdau"
+								name="batdau"> <label>Ngày kết thúc:</label> <input
+								type="date" id="ketthuc" name="ketthuc"> <input type="text" id="manv" name="manv" placeholder="Nhập ID">
+							<button type="submit">Liệt kê</button>
+						</form>
+<!-- 			<form action="#" th:action="@{/luonguser}" method="POST" -->
+<!-- 				class="center"> -->
+<!-- 				<div class="row"> -->
+<!-- 					<div class="col"> -->
+<!-- 						<input type="date" id="batdau" name=" batdau" class="form-control" -->
+<!-- 							placeholder="Ngày bắt đầu:"> -->
+<!-- 					</div> -->
+<!-- 					<div class="col"> -->
+<!-- 						<input type="date" id="ketthuc" name="ketthuc" -->
+<!-- 							class="form-control" placeholder="Ngày kết thúc:"> -->
+<!-- 					</div> -->
+<!-- 					<div class="col"> -->
+<!-- 						 <input type="text" id="manv" name="manv" -->
+<!-- 							class="form-control" placeholder="Nhập ID"> -->
+<!-- 					</div> -->
+<!-- 					<div class="col"> -->
+<!-- 						<button type="submit" class="btn btn-success">Liệt Kê</button> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 			</form> -->
 			<br>
 		</div>
 

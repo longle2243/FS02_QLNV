@@ -61,7 +61,7 @@ public class ChiTietCaLamcontroller {
 	@RequestMapping(value = "/savechamcong", method = RequestMethod.POST)
 	public String saveProduct(@ModelAttribute("chamcong") ChiTietCaLam ChiTietCaLam) {
 		chitietcalamService.savechitiet(ChiTietCaLam);
-	    return "redirect:/s";
+	    return "redirect:/dangkicalam";
 	}
 	
 	@RequestMapping("/dangkicalam")
