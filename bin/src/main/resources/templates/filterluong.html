@@ -22,43 +22,35 @@
 	crossorigin="anonymous">
 </head>
 <body>
-	<div class="d-flex">
+	<main class="d-flex flex-nowrap">
 		<div th:replace="~{fragments/navbaruser :: header}"></div>
 		<div class="b-example-divider b-example-vr"></div>
-	<div class="container">
-		<div class="card mt-5">
-			<div class="card-header text-white bg-secondary">
-				<h2>Thông tin cá nhân</h2>
-			</div>
-			<div class="card-body">
-				<table class="table table-borderless">
-				<tbody>
-					<tr th:each="nhanvien : ${listnhanvien}">
-<!-- 					</tr> -->
-						<td th:text="${nhanvien.hoten}" />
-						<td th:text="${nhanvien.sdt}" />
-						<td th:text="${nhanvien.email}" />
-<!-- 					<tr> -->
-<!-- 						<th><h7 class="card-title">Họ và Tên</h7></th> -->
-<!-- 					</tr> -->
-<!-- 					<tr> -->
-<!-- 						<th><h7 class="card-title">Chức vụ</h7></th> -->
-<!-- 						<td th:text="${nhanvien.chucvu.chucvu}" /> -->
-<!-- 					<tr> -->
-<!-- 					<tr> -->
-<!-- 						<th><h7 class="card-title">Số điện thoại</h7></th> -->
-<!-- 					<tr> -->
-<!-- 					<tr> -->
-<!-- 						<th class="card-title">Email</th> -->
-					</tr>
-				</tbody>
-			</table>
-<!-- 			<a class="btn btn-info" -->
-<!-- 				th:href="@{'/edit/' + ${nhanvien[0]}">Chỉnh sửa thông -->
-<!-- 				tin</a> -->
-				
-			</div>
+		<div class="container">
+			<br>
+			<h1 class="text-center">THỐNG KÊ LƯƠNG</h1>
+			<br>
+			<form action="#" th:action="@{/tkluong}" method="POST">
+				<label>Ngày bắt đầu:</label> <input type="date" id="batdau"
+					name="batdau"> <label>Ngày kết thúc:</label> <input
+					type="date" id="ketthuc" name="ketthuc"> <label>Ma
+					NV:</label> <input type="text" id="manv" name="manv">
+				<button type="submit">Liệt kê</button>
+			</form>
+			<br>
 		</div>
-		</div>
+
+	</main>
+
+	<script language="JavaScript">
+		document.getElementById("btn-d").onclick = function() {
+			document.getElementById("dd").style.display = 'block';
+			document.getElementById("dw").style.display = 'none';
+			document.getElementById("dm").style.display = 'none';
+			document.getElementById("dy").style.display = 'none';
+		};
+	</script>
+	<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+
+	<script th:src="@{/js/sidebars.js}"></script>
 </body>
 </html>

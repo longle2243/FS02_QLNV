@@ -14,8 +14,9 @@ public interface NhanVienRepo extends JpaRepository<NhanVien, Integer>{
 	NhanVien findByUsername(String username);
 	
 	@Query("SELECT u FROM NhanVien u WHERE u.username = :username")
-	NhanVien thongtincannhan(@Param("username") String username);
+	List<NhanVien> thongtincannhan(@Param("username") String username);
 	
-//	@Query(value = "SELECT c.manhanvien, c.hoten, c.chucvu.chucvu,c.sdt, c.email FROM NhanVien AS c WHERE c.nv.manhanvien=?1")
-//	List<Object[]> infocanhan(String username);
+	@Query(value = "SELECT c FROM NhanVien AS c WHERE c.username= ?1",nativeQuery = true)
+//	List<NhanVien> infocanhan( );
+	List<NhanVien> infocanhan(String username);
 }

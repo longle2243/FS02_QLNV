@@ -90,11 +90,16 @@ public class NhanViencontroller {
 //		return mav;
 //	}
 
-	@RequestMapping("/canhan")
+	@RequestMapping(value="/canhan",method = RequestMethod.GET)
 	public String viewuser(Authentication auth, Model model) {
-		model.addAttribute("listnhanvien", service.getthongtincanhan(auth.getName()));
+		model.addAttribute("listnhanvien", service.getinfouser(auth.getName()));
 		return "canhan";
 	}
+	
+//	@GetMapping("/testauth")
+//	public String index(Authentication auth) {
+//		return "auth.getName()";
+//	}
 	
 	@RequestMapping("/luongcanhan")
 	public String getluongcanhan() {
@@ -127,13 +132,13 @@ public class NhanViencontroller {
         }
         service.save(userForm);
         securityService.autoLogin(userForm.getUsername(), userForm.getPasswordConfirm());
-        return "redirect:/index";
+        return "redirect:/canhan";
     }
 
     @GetMapping("/login")
     public String login(Model model, String error, String logout) {
         if (securityService.isAuthenticated()) {
-            return "redirect:/";
+            return "redirect:/canhan";
         }
         if (error != null)
             model.addAttribute("error", "Your username and password is invalid.");
@@ -143,9 +148,9 @@ public class NhanViencontroller {
     }
     
     // Đổi giao diện sau đăng nhập Admin User index - canhan
-    @GetMapping({"/", "/index"})
+    @GetMapping({"/", "/canhan"})
     public String welcome(Model model) {
-    	return "index";
+    	return "canhan";
     	
     }
     

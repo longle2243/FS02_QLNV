@@ -48,13 +48,16 @@ public class NhanVienSv {
 		return repo.findByUsername(username);
 	}
 
-	public NhanVien getthongtincanhan(String username) {
+	public List<NhanVien> getthongtincanhan(String username) {
 		return repo.thongtincannhan(username);
 	}
 	
-//	public List<Object[]> getinfouser(String username) {
-//		return repo.infocanhan(username);
+//	public List<NhanVien> getinfouser( ) {
+//		return repo.infocanhan();
 //	}
+	public List<NhanVien> getinfouser(String username) {
+		return repo.infocanhan(username);
+	}
 }
 
 
