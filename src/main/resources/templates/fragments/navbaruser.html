@@ -7,13 +7,13 @@
 <body>
 	<div class="d-flex flex-column  flex-shrink-0 p-3 text-white bg-secondary"
 		style="width: 280px;" th:fragment="header">
-		<a th:href="@{/}"
+		<a th:href="@{/index}"
 			class="d-flex align-items-center mb-3 mb-md-0 me-md-auto nav-link text-white text-decoration-none">
 			<span class="fs-4 font-weight-bold">USER</span>
 		</a>
 		<hr>
 		<ul class="nav nav-pills flex-column mb-auto">
-			<li><a th:href="@{/canhan/1}" class="nav-link text-white"> <span>
+			<li><a th:href="@{/canhan}" class="nav-link text-white"> <span>
 				<i class="fa-solid fa-id-card"></i>&nbsp;&nbsp; THÔNG TIN CÁ NHÂN</span>
 			</a></li>
 			
@@ -29,7 +29,7 @@
 				<i class="fa-solid fa-calendar"></i>&nbsp;&nbsp; ĐĂNG KÍ CA LÀM</span>
 			</a></li>
 			
-			<li><a th:href="@{/luongcanhan}" class="nav-link text-white"> <span> 
+			<li><a th:href="@{/filterluonguser}" class="nav-link text-white"> <span> 
 				<i class="fa-solid fa-chart-simple"></i>&nbsp;&nbsp; TỔNG LƯƠNG</span>
 			</a></li>
 		</ul>

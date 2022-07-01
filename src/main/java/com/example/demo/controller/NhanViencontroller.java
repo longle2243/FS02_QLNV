@@ -36,7 +36,7 @@ public class NhanViencontroller {
 	@Autowired
 	private NhanVienValidator userValidator;
 
-	@RequestMapping("/")
+	@RequestMapping("/index")
 	public String viewHomePage(Model model) {
 		List<NhanVien> listnhanvien = service.listAll();
 		model.addAttribute("listnhanvien", listnhanvien);
@@ -90,7 +90,7 @@ public class NhanViencontroller {
 //		return mav;
 //	}
 
-	@RequestMapping(value="/canhan",method = RequestMethod.GET)
+	@RequestMapping("/canhan")
 	public String viewuser(Authentication auth, Model model) {
 		model.addAttribute("listnhanvien", service.getinfouser(auth.getName()));
 		return "canhan";

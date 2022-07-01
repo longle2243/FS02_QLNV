@@ -26,12 +26,21 @@
 						th:field="*{hoten}" placeholder="Nhập họ tên" required>
 				</div>
 
+<!-- 				<div class="mb-3"> -->
+<!-- 					<input type="text" class="form-control" id="chucvu" name="chucvu" -->
+<!-- 						th:field="*{chucvu.machucvu}" placeholder="Nhập mã chức vụ" -->
+<!-- 						required> -->
+<!-- 				</div> -->
+
 				<div class="mb-3">
-					<input type="text" class="form-control" id="chucvu" name="chucvu"
-						th:field="*{chucvu.machucvu}" placeholder="Nhập mã chức vụ" required>
+					<label>BUỔI:</label>
+					<!-- <input type="text" class="form-control" th:field="*{buoi}" required> -->
+					<select class="form-control" th:field="*{chucvu.machucvu}">
+						<option value="111">Nhân Viên</option>
+					</select>
 				</div>
 				<div class="mb-3">
-				
+
 					<input type="tel" class="form-control" id="sdt" name="sdt"
 						th:field="*{sdt}" placeholder="Nhập số điện thoại" required>
 				</div>

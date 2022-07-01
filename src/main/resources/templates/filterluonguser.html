@@ -23,16 +23,17 @@
 </head>
 <body>
 	<main class="d-flex flex-nowrap">
-		<div th:replace="~{fragments/navbar :: header}"></div>
+		<div th:replace="~{fragments/navbaruser :: header}"></div>
 		<div class="b-example-divider b-example-vr"></div>
 		<div class="container">
 			<br>
 			<h1 class="text-center">THỐNG KÊ LƯƠNG</h1>
 			<br>
-			<form action="#" th:action="@{/tkluong}" method="POST">
+			<form action="#" th:action="@{/luonguser}" method="POST">
 				<label>Ngày bắt đầu:</label> <input type="date" id="batdau"
 					name="batdau"> <label>Ngày kết thúc:</label> <input
-					type="date" id="ketthuc" name="ketthuc"> 
+					type="date" id="ketthuc" name="ketthuc"> <label>Ma
+					NV:</label> <input type="text" id="manv" name="manv">
 				<button type="submit">Liệt kê</button>
 			</form>
 			<br>

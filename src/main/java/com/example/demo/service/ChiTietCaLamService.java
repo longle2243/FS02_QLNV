@@ -8,5 +8,6 @@ public interface ChiTietCaLamService {
 	List<ChiTietCaLam> getAllChiTietCaLam();
 	List<Object[]> getAllthongkeluong(String batdau, String ketthuc);
 	List<Object[]> getAllthongkeluongnv(String batdau, String ketthuc,Integer manv);
-
+	
+	void savechitiet(ChiTietCaLam ctcl) ;
 }
