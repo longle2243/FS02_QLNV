@@ -90,12 +90,13 @@ public class NhanViencontroller {
 //		return mav;
 //	}
 
-	@RequestMapping("/canhan")
-	public String viewuser(Authentication auth, Model model) {
+	@RequestMapping("/canhan1")
+	public String viewuser(Authentication auth, Model model) { // giờ đổi url để test cái này. GET Thôi
+		System.out.println("******************************");
 		model.addAttribute("listnhanvien", service.getinfouser(auth.getName()));
 		return "canhan";
 	}
-	
+	//ủa nó không ra luôn qua . t test nó còn ra được chữ quanglong1
 //	@GetMapping("/testauth")
 //	public String index(Authentication auth) {
 //		return "auth.getName()";
@@ -132,13 +133,13 @@ public class NhanViencontroller {
         }
         service.save(userForm);
         securityService.autoLogin(userForm.getUsername(), userForm.getPasswordConfirm());
-        return "redirect:/canhan";
+        return "redirect:/canhan1";
     }
 
     @GetMapping("/login")
     public String login(Model model, String error, String logout) {
         if (securityService.isAuthenticated()) {
-            return "redirect:/canhan";
+            return "redirect:/canhan1";
         }
         if (error != null)
             model.addAttribute("error", "Your username and password is invalid.");
@@ -150,8 +151,8 @@ public class NhanViencontroller {
     // Đổi giao diện sau đăng nhập Admin User index - canhan
     @GetMapping({"/", "/canhan"})
     public String welcome(Model model) {
-    	return "canhan";
-    	
+//    	return "canhan";
+    	return "redirect:/canhan1"; 
     }
     
 //    public String welcome(Authentication auth) {

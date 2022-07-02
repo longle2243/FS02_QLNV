@@ -25,39 +25,47 @@
 	<div class="d-flex">
 		<div th:replace="~{fragments/navbaruser :: header}"></div>
 		<div class="b-example-divider b-example-vr"></div>
-	<div class="container">
-		<div class="card mt-5">
-			<div class="card-header text-white bg-secondary">
-				<h2>Thông tin cá nhân</h2>
+		<div class="container">
+			<div class="card mt-5">
+				<div class="card-header text-white bg-secondary">
+					<h2>Thông tin cá nhân</h2>
+				</div>
+				<div class="card-body">
+					<table class="table table-borderless">
+						<thead>
+							<tr>
+								<th>Họ & tên</th>
+								<th>Số Điện Thoại</th>
+								<th>Email</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="nhanvien : ${listnhanvien}">
+								<!-- 					</tr> -->
+								<td th:text="${nhanvien.hoten}" />
+								<td th:text="${nhanvien.sdt}" />
+								<td th:text="${nhanvien.email}" />
+								<!-- 					<tr> -->
+								<!-- 						<th><h7 class="card-title">Họ và Tên</h7></th> -->
+								<!-- 					</tr> -->
+								<!-- 					<tr> -->
+								<!-- 						<th><h7 class="card-title">Chức vụ</h7></th> -->
+								<!-- 						<td th:text="${nhanvien.chucvu.chucvu}" /> -->
+								<!-- 					<tr> -->
+								<!-- 					<tr> -->
+								<!-- 						<th><h7 class="card-title">Số điện thoại</h7></th> -->
+								<!-- 					<tr> -->
+								<!-- 					<tr> -->
+								<!-- 						<th class="card-title">Email</th> -->
+							</tr>
+						</tbody>
+					</table>
+					<!-- 			<a class="btn btn-info" -->
+					<!-- 				th:href="@{'/edit/' + ${nhanvien.manhanvien}">Chỉnh sửa thông -->
+					<!-- 				tin</a> -->
+
+				</div>
 			</div>
-			<div class="card-body">
-				<table class="table table-borderless">
-				<tbody>
-					<tr th:each="nhanvien:${listnhanvien}"></tr>
-					<tr>
-						<th><h7 class="card-title">Họ và Tên</h7></th>
-						<td th:text="${nhanvien.hoten}" />
-					</tr>
-<!-- 					<tr> -->
-<!-- 						<th><h7 class="card-title">Chức vụ</h7></th> -->
-<!-- 						<td th:text="${nhanvien.chucvu.chucvu}" /> -->
-<!-- 					<tr> -->
-					<tr>
-						<th><h7 class="card-title">Số điện thoại</h7></th>
-						<td th:text="${nhanvien.sdt}" />
-					<tr>
-					<tr>
-						<th class="card-title">Email</th>
-						<td th:text="${nhanvien.email}" />
-					<tr>
-				</tbody>
-			</table>
-			<a class="btn btn-info"
-				th:href="@{'/edit/' + ${nhanvien.manhanvien}}">Chỉnh sửa thông
-				tin</a>
-				
-			</div>
-		</div>
 		</div>
 </body>
 </html>

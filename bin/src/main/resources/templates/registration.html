@@ -19,14 +19,28 @@
 
 			<form class="form-signin" method="POST" th:object="${userForm}"
 				th:action="@{/registration}">
-				<input type="text" class="form-control" style="display: none"
-					th:field="*{chucvu}" value="Không có">
+<!-- 				<input type="text" class="form-control" style="display: none" -->
+<!-- 					th:field="*{chucvu}" value="Không có"> -->
 				<div class="mb-3 mt-3">
 					<input type="text" class="form-control" id="uname" name="uname"
 						th:field="*{hoten}" placeholder="Nhập họ tên" required>
 				</div>
 
+<!-- 				<div class="mb-3"> -->
+<!-- 					<input type="text" class="form-control" id="chucvu" name="chucvu" -->
+<!-- 						th:field="*{chucvu.machucvu}" placeholder="Nhập mã chức vụ" -->
+<!-- 						required> -->
+<!-- 				</div> -->
+
 				<div class="mb-3">
+<!-- 					<input type="text" class="form-control" th:field="*{chucvu}" required> -->
+					<select class="form-control" th:field="*{chucvu.machucvu}">
+						<option value="1">Nhân Viên</option>
+					</select>
+				</div>
+				
+				<div class="mb-3">
+
 					<input type="tel" class="form-control" id="sdt" name="sdt"
 						th:field="*{sdt}" placeholder="Nhập số điện thoại" required>
 				</div>
@@ -37,9 +51,9 @@
 				</div>
 				<div class="mb-3">
 					<input type="text" th:field="*{username}" class="form-control"
-						placeholder="Nhập username" autofocus="true" id="username" name="username"> <span
-						class="has-error" th:if="${#fields.hasErrors('username')}"
-						th:errors="*{username}"></span>
+						placeholder="Nhập username" autofocus="true" id="username"
+						name="username"> <span class="has-error"
+						th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span>
 				</div>
 
 				<div class="mb-3">
@@ -49,10 +63,9 @@
 				</div>
 
 				<div class="mb-3">
-					<input type="password"
-						th:field="*{passwordConfirm}" class="form-control"
-						placeholder="Nhập lại password"> <span class="has-error"
-						th:if="${#fields.hasErrors('passwordConfirm')}"
+					<input type="password" th:field="*{passwordConfirm}"
+						class="form-control" placeholder="Nhập lại password"> <span
+						class="has-error" th:if="${#fields.hasErrors('passwordConfirm')}"
 						th:errors="*{passwordConfirm}"></span>
 				</div>
 				<div class="text-center">

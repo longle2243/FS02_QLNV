@@ -35,8 +35,12 @@
 					th:object="${chamcong}" method="post">
 					<div class="mb-3">
 						<label>ID:</label> <input type="text" class="form-control"
-							th:field="*{nhanvien}">
+							th:field="*{nv}">
 					</div>
+					<div class="mb-3">
+						<label>NGÀY LÀM:</label> <input type="date" id="batdau" name="batdau" th:field="*{ngaydangky}">
+					</div>
+
 					<div class="mb-3">
 						<button type="button" class="btn btn-outline-secondary" id="btn-d">Tất
 							Cả</button>
@@ -51,43 +55,40 @@
 					<div id="dd" class="hidden">
 						<div class="mb-3">
 							<label>TẤT CẢ CÔNG VIỆC:</label> <select class="form-control"
-								th:field="*{congviec}">
+								th:field="*{cl}">
 								<option th:each="congviec : ${listcongviec}"
 									th:value="${congviec.macongviec}"
 									th:text="${congviec.congviec}"></option>
 							</select>
 						</div>
 					</div>
-					
+
 					<div id="dw" class="hidden">
 						<div class="mb-3">
 							<label>CÔNG VIỆC SÁNG:</label> <select class="form-control"
-								th:field="*{congviec}">
+								th:field="*{cl}">
 								<option th:each="congviec : ${listcongviecsang}"
-									th:value="${congviec[0]}"
-									th:text="${congviec[2]}"></option>
+									th:value="${congviec[0]}" th:text="${congviec[2]}"></option>
 							</select>
 						</div>
 					</div>
-					
+
 					<div id="dm" class="hidden">
 						<div class="mb-3">
 							<label>CÔNG VIỆC CHIỀU:</label> <select class="form-control"
-								th:field="*{congviec}">
+								th:field="*{cl}">
 								<option th:each="congviec : ${listcongviecchieu}"
-									th:value="${congviec[0]}"
-									th:text="${congviec[2]}"></option>
+									th:value="${congviec[0]}" th:text="${congviec[2]}"></option>
 							</select>
 						</div>
 					</div>
-					
+
 					<div id="dy" class="hidden">
 						<div class="mb-3">
 							<label>CÔNG VIỆC TỐI:</label> <select class="form-control"
-								th:field="*{congviec}">
+								th:field="*{cl}">
 								<option th:each="congviec : ${listcongviectoi}"
-									th:value="${congviec[0]}"
-									th:text="${congviec[2]}"></option>
+									th:value="${congviec[0]}" th:text="${congviec[2]}"></option>
 							</select>
 						</div>
 					</div>

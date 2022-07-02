@@ -28,10 +28,10 @@
 		<div class="b-example-divider b-example-vr"></div>
 		<div class="container">
 			<br>
-			<button type="button" class="btn btn-info">
-				<a class="nav-link text-white " th:href="@{/themnhanvien}">Thêm
-					Nhân Viên</a>
-			</button>
+<!-- 			<button type="button" class="btn btn-info"> -->
+<!-- 				<a class="nav-link text-white " th:href="@{/themnhanvien}">Thêm -->
+<!-- 					Nhân Viên</a> -->
+<!-- 			</button> -->
 			<div class="card mt-5">
 				<div class="card-header text-white bg-primary">
 					<h2>Danh sách nhân viên</h2>
@@ -58,10 +58,9 @@
 								<td>Cần Thơ</td>
 								<td th:text="${nhanvien.sdt}" />
 								<td th:text="${nhanvien.email}" />
-								<td><a class="btn btn-info"
-									th:href="@{'/edit/' + ${nhanvien.manhanvien}}">Edit</a> <a
-									class="btn btn-danger"
-									th:href="@{'/delete/' + ${nhanvien.manhanvien}}">Delete</a></td>
+								<td>
+								<a class="btn btn-info" th:href="@{'/edit/' + ${nhanvien.manhanvien}}">Edit</a>
+								<a class="btn btn-danger" th:href="@{'/delete/' + ${nhanvien.manhanvien}}">Delete</a></td>
 							</tr>
 						</tbody>
 					</table>

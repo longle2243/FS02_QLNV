@@ -56,6 +56,7 @@ public class NhanVienSv {
 //		return repo.infocanhan();
 //	}
 	public List<NhanVien> getinfouser(String username) {
+		System.out.println(repo.infocanhan(username).toString()); // ok. 
 		return repo.infocanhan(username);
 	}
 }
